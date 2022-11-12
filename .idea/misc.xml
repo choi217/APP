@@ -9,12 +9,14 @@
         <entry key="..\:/Myapp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1835" />
         <entry key="..\:/Myapp/app/src/main/res/drawable/press_effect.xml" value="0.127" />
         <entry key="..\:/Myapp/app/src/main/res/drawable/press_effect2.xml" value="0.135" />
+        <entry key="..\:/Myapp/app/src/main/res/drawable/press_effect3.xml" value="0.134" />
         <entry key="..\:/Myapp/app/src/main/res/layout/activity_edit_info.xml" value="0.3333333333333333" />
         <entry key="..\:/Myapp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Myapp/app/src/main/res/layout/activity_signup.xml" value="0.16666666666666666" />
         <entry key="..\:/Myapp/app/src/main/res/layout/activity_student_info_edit.xml" value="0.3333333333333333" />
         <entry key="..\:/Myapp/app/src/main/res/layout/activity_student_info_show.xml" value="0.22" />
-        <entry key="..\:/Myapp/app/src/main/res/layout/activity_teacher_info_edit.xml" value="0.1" />
+        <entry key="..\:/Myapp/app/src/main/res/layout/activity_subject_choose.xml" value="0.1" />
+        <entry key="..\:/Myapp/app/src/main/res/layout/activity_teacher_info_edit.xml" value="0.22" />
         <entry key="..\:/Myapp/app/src/main/res/layout/activity_teacher_info_show.xml" value="0.3184834123222749" />
         <entry key="..\:/Myapp/app/src/main/res/layout/activity_user_information.xml" value="0.22" />
       </map>
