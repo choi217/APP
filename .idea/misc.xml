@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/APP/app/src/main/res/layout/activity_main.xml" value="0.175" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_signup.xml" value="0.22" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_student_info_edit.xml" value="0.1" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_subject_choose.xml" value="0.175" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_teacher_info_edit.xml" value="0.175" />
         <entry key="..\:/Myapp/app/src/main/res/drawable/a.xml" value="0.126" />
         <entry key="..\:/Myapp/app/src/main/res/drawable/bg_username.xml" value="0.135" />
         <entry key="..\:/Myapp/app/src/main/res/drawable/edit_info.xml" value="0.1835" />
