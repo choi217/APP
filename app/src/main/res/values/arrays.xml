@@ -50,5 +50,22 @@
         <item>"博士在读"</item>
         <item>"博士毕业"</item>
     </string-array>
+    <string-array name="grade">
+        <item>"请选择年级"</item>
+        <item>"幼儿"</item>
+        <item>"一年级"</item>
+        <item>"二年级"</item>
+        <item>"三年级"</item>
+        <item>"四年级"</item>
+        <item>"五年级"</item>
+        <item>"六年级"</item>
+        <item>"初一"</item>
+        <item>"初二"</item>
+        <item>"初三"</item>
+        <item>"高一"</item>
+        <item>"高二"</item>
+        <item>"高三"</item>
+        <item>"其他（请在情况描述中说明）"</item>
+    </string-array>
     
 </resources>

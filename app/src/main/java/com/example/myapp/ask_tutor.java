@@ -4,36 +4,27 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-public class teacher_info_edit extends AppCompatActivity {
-    private Button m_btn_submit;
+public class ask_tutor extends AppCompatActivity {
     private Button edit_subject;
+    private Button apply_now;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_info_edit);
-        m_btn_submit = findViewById(R.id.btn_submit);
-
-        m_btn_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"编辑成功",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(teacher_info_edit.this,teacher_info_show.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_ask_tutor);
         edit_subject = findViewById(R.id.edit_subject);
+        apply_now = findViewById(R.id.apply_now);
+        //设置多选
         edit_subject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(teacher_info_edit.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ask_tutor.this);
                 switch (view.getId()){
                     case R.id.edit_subject:
                         builder.setTitle("请选择科目");
@@ -59,7 +50,7 @@ public class teacher_info_edit extends AppCompatActivity {
                                 }
                                 TextView subject_show = findViewById(R.id.subject_show);
                                 subject_show.setText(text);
-                                Toast.makeText(teacher_info_edit.this,text, Toast.LENGTH_LONG).show();
+                                Toast.makeText(ask_tutor.this,text, Toast.LENGTH_LONG).show();
                                 dialogInterface.dismiss();
                             }
                         });
@@ -67,11 +58,17 @@ public class teacher_info_edit extends AppCompatActivity {
                 }
                 AlertDialog ad = builder.create();
                 ad.show();
-
             }
         });
 
+        //提交申请，这里设置的回到主页面，等待修改
+        apply_now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"提交申请成功，请等待教师响应",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ask_tutor.this,subject_choose.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
 }
