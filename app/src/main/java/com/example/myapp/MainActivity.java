@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //登录跳转
         m_btn_login.setOnClickListener(new View.OnClickListener(){
             String name = m_edt_name.getText().toString();
             String pwd =m_edt_pwd.getText().toString();
