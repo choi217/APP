@@ -16,14 +16,23 @@
             android:layout_height="35dp"
             android:orientation="horizontal"
             >
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:background="@drawable/press_effect3"
+                android:text="回到主页"
+                android:textSize="20sp"/>
             <TextView
-                android:layout_width="250dp"
+                android:layout_width="150dp"
                 android:layout_height="35dp"
                 android:text="个人信息展示"
                 android:textSize="20sp"
+                android:layout_marginLeft="10dp"
                 android:gravity="right"
                 />
             <Button
+                android:id="@+id/btn_edit"
                 android:layout_width="70dp"
                 android:layout_height="35dp"
                 android:text="编辑"
