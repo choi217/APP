@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,12 +15,16 @@ import android.widget.Toast;
 public class ask_tutor extends AppCompatActivity {
     private Button edit_subject;
     private Button apply_now;
+    private Button back_button;
+    private Button to_my_space;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask_tutor);
         edit_subject = findViewById(R.id.edit_subject);
         apply_now = findViewById(R.id.apply_now);
+        back_button =findViewById(R.id.tutor_back);
+        to_my_space =findViewById(R.id.ask_tutor_mine);
         //设置多选
         edit_subject.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,5 +75,23 @@ public class ask_tutor extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ask_tutor.this.finish();
+            }
+        });
+
+        to_my_space.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(ask_tutor.this,person_space.class);
+                startActivity(intent1);
+                Toast.makeText(getApplicationContext(),"点",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+
 }
