@@ -62,23 +62,28 @@ public class MainActivity extends AppCompatActivity {
         m_btn_login.setOnClickListener(new View.OnClickListener(){
             @SuppressLint("Range")
             @Override
-            public  void onClick(View view) {
+            public void onClick(View view) {
                 String name = m_edt_name.getText().toString();
                 String pwd = m_edt_pwd.getText().toString();
+                System.out.println(pwd);
+
                 String args[] = {name};
                 Cursor c = db1.rawQuery("SELECT * FROM user where username=?", args);
-                String pas = null;
+                String pas = "";
                 if (c.getCount() > 0) {
                     c.moveToFirst();
                     pas = c.getString(c.getColumnIndex("password"));
+                    boolean aa = (pas.equals(pwd));
+                    if (aa&&pas.length()>0) {
+                        Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, subject_choose.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_LONG).show();
+                    }
                 }
-                boolean aa = (pas.equals(pwd));
-                if (aa) {
-                    Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(MainActivity.this, subject_choose.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getApplicationContext(), "登录失败", Toast.LENGTH_LONG).show();
+                else{
+                    Toast.makeText(getApplicationContext(), "用户名不存在", Toast.LENGTH_LONG).show();
                 }
 
             }
