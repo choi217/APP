@@ -2,11 +2,19 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.widget.Button;
+import android.os.Bundle;
+import android.content.Intent;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.IOException;
 
 //这是一行测试注释
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +28,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        DBHelper db;
+        db = new DBHelper(this);
+        try {
+            db.createDB();
+        } catch (IOException ioe) {
+            throw new Error("Database not created....");
+        }
+
+        try {
+            db.openDB();
+            db.close();
+        } catch (SQLException sqle) {
+            throw sqle;
+        }
+
+        SQLiteDatabase db1;
+        db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
         //找到控件
         m_btn_signup=findViewById(R.id.btn_signup);
         m_btn_login=findViewById(R.id.btn_login);
@@ -35,12 +60,27 @@ public class MainActivity extends AppCompatActivity {
         });
         //登录跳转
         m_btn_login.setOnClickListener(new View.OnClickListener(){
-            String name = m_edt_name.getText().toString();
-            String pwd =m_edt_pwd.getText().toString();
+            @SuppressLint("Range")
             @Override
             public  void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,subject_choose.class);
-                startActivity(intent);
+                String name = m_edt_name.getText().toString();
+                String pwd = m_edt_pwd.getText().toString();
+                String args[] = {name};
+                Cursor c = db1.rawQuery("SELECT * FROM user where username=?", args);
+                String pas = null;
+                if (c.getCount() > 0) {
+                    c.moveToFirst();
+                    pas = c.getString(c.getColumnIndex("password"));
+                }
+                boolean aa = (pas.equals(pwd));
+                if (aa) {
+                    Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this, main_frame.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "登录失败", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 

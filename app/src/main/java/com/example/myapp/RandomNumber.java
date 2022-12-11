@@ -10,7 +10,7 @@ public class RandomNumber {
      * @param n
      * @return
      */
-    public long getRandomNumber(int n){
+    public static long getRandomNumber(int n){
         if(n<1){
             throw new IllegalArgumentException("随机数位数必须大于0");
         }

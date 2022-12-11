@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapp">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,10 +19,11 @@
         android:theme="@style/Theme.Myapp"
         tools:targetApi="31">
         <activity
-            android:name=".ask_tutor"
-            android:exported="false" />
+            android:name="subject_choose"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
-            android:name=".subject_choose"
+            android:name=".ask_tutor"
             android:exported="false" />
         <activity
             android:name=".teacher_info_edit"
@@ -45,6 +51,10 @@
         </activity>
         <activity
             android:name=".person_space"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".main_frame"
             android:exported="false"/>
     </application>
 
