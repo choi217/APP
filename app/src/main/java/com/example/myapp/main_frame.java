@@ -24,7 +24,7 @@ public class main_frame extends AppCompatActivity implements BottomNavigationVie
     public void initView() {
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);//设置导航栏监听器
-        bottomNavigationView.setSelectedItemId(R.id.home);//设置默认选择的导航栏子项tab_one即首页
+        bottomNavigationView.setSelectedItemId(R.id.home);//设置默认选择的导航栏子项首页
         bottomNavigationView.setItemIconTintList(null);//取消导航栏子项图片的颜色覆盖
     }
 
@@ -34,7 +34,7 @@ public class main_frame extends AppCompatActivity implements BottomNavigationVie
         int itemId = menuItem.getItemId();//获取点击的位置以及对应的id
         switch (itemId) {
             case R.id.home:
-                replaceFragment(new subject_choose());//id为tab_one则第一项被点击，遂用HomeFragment替换空Fragment
+                replaceFragment(new subject_choose());
                 menuItem.setChecked(true);
                 break;
             case R.id.message:
