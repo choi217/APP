@@ -17,14 +17,18 @@ public class main_frame extends AppCompatActivity implements BottomNavigationVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_frame);
+        if (savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new subject_choose()).commit();
+        }
         initView();
-        replaceFragment(new subject_choose());
+        //replaceFragment(new subject_choose());
+
     }
 
     public void initView() {
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);//设置导航栏监听器
-        bottomNavigationView.setSelectedItemId(R.id.home);//设置默认选择的导航栏子项首页
+        //bottomNavigationView.setSelectedItemId(R.id.home);//设置默认选择的导航栏子项首页
         bottomNavigationView.setItemIconTintList(null);//取消导航栏子项图片的颜色覆盖
     }
 
