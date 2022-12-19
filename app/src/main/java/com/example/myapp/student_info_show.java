@@ -26,7 +26,7 @@ public class student_info_show extends AppCompatActivity {
         m_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(student_info_show.this,subject_choose.class);
+                Intent intent = new Intent(student_info_show.this,main_frame.class);
                 startActivity(intent);
             }
         });

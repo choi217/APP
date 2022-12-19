@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     boolean aa = (pas.equals(pwd));
                     if (aa&&pas.length()>0) {
                         Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(MainActivity.this, subject_choose.class);
+                        Intent intent = new Intent(MainActivity.this, main_frame.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_LONG).show();
