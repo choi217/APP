@@ -1,6 +1,5 @@
 package com.example.myapp;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -69,7 +68,7 @@ public class ask_tutor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"提交申请成功，请等待教师响应",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ask_tutor.this,subject_choose.class);
+                Intent intent = new Intent(ask_tutor.this, student_mainpage.class);
                 startActivity(intent);
             }
         });

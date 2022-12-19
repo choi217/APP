@@ -10,15 +10,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class main_frame extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class teacher_main_frame extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_frame);
+        setContentView(R.layout.activity_teacher_main_frame);
         if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new student_mainpage()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new teacher_mainpage()).commit();
         }
         initView();
         //replaceFragment(new subject_choose());
@@ -38,7 +38,7 @@ public class main_frame extends AppCompatActivity implements BottomNavigationVie
         int itemId = menuItem.getItemId();//获取点击的位置以及对应的id
         switch (itemId) {
             case R.id.home:
-                replaceFragment(new student_mainpage());
+                replaceFragment(new teacher_mainpage());
                 menuItem.setChecked(true);
                 break;
             case R.id.message:
@@ -46,7 +46,7 @@ public class main_frame extends AppCompatActivity implements BottomNavigationVie
                 menuItem.setChecked(true);
                 break;
             case R.id.person:
-                replaceFragment(new student_space());
+                replaceFragment(new teacher_space());
                 menuItem.setChecked(true);
                 break;
         }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/g">
+    <Button
+        android:id="@+id/help_back"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="@drawable/backbutton"
+        android:layout_gravity="top"
+        android:layout_marginLeft="0dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="家教帮助"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="做家教流程如下："
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:textSize="18sp"
+                android:text="1、网上注册。"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:textSize="18sp"
+                android:text="2、教员认证。大学生：需要上传学生证、身份证、生活照、如果有其它能力证明书更好。 老师：需要上传教师资格证、身份证、生活照、如果有其它能力证明书更好。"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:textSize="18sp"
+                android:text="3、通过认证,正式成为教员。管理员会根据具体情况进行1对1的审核，如果上传资料没有问题，将会立即将教员简历改为“已认证”状态。"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="137dp"
+                android:textSize="18sp"
+                android:text="4、获取学员信息。教员获得家教订单有三种方式：①教员看到合适自己的家教订单，主动在线预约或来电咨询；②学员在APP上看到你的简历，对你感兴趣，主动预约你；③管理员看你符合某个家教订单，主动联系你；"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="137dp"
+                android:textSize="18sp"
+                android:text="5、介绍合适学员。一旦有适合你的家教，管理员会电话通知你，明确告知家教的具体情况，教员可以自主选择是否接单。如果确定要接受此份家教，教员取得学员联系方式后，要第一时间和学员联系，确定上课事宜。"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:textSize="18sp"
+                android:text="6、与学员联系,确定试教事宜。双方确定家教时间、授课地点、授课方式、主要课程、进度安排、时薪、试讲收费标准等有关事宜。"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="126dp"
+                android:textSize="18sp"
+                android:text="7、上门试讲。试讲成功后，收取学员的会员费，开展正常教学，及时反馈教学情况。 试讲不成功或学员没有约下次授课的一定要第一时间电话通知APP，告知家教结果"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
