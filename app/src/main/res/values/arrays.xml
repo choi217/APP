@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="province">
-        <item>"请选择省份"</item>
+        <item>"选择省份"</item>
         <item>"北京"</item>
         <item>"天津"</item>
         <item>"重庆"</item>
@@ -38,7 +38,7 @@
         <item>"云南"</item>
     </string-array>
     <string-array name="education">
-        <item>"请选择学历"</item>
+        <item>"选择学历"</item>
         <item>"大专以下"</item>
         <item>"大专在读"</item>
         <item>"大专毕业"</item>
@@ -51,7 +51,7 @@
         <item>"博士毕业"</item>
     </string-array>
     <string-array name="grade">
-        <item>"请选择年级"</item>
+        <item>"选择年级"</item>
         <item>"幼儿"</item>
         <item>"一年级"</item>
         <item>"二年级"</item>
@@ -67,5 +67,33 @@
         <item>"高三"</item>
         <item>"其他（请在情况描述中说明）"</item>
     </string-array>
-    
+    <string-array name="course">
+        <item>"选择科目"</item>
+        <item>"语文"</item>
+        <item>"数学"</item>
+        <item>"英语"</item>
+        <item>"物理"</item>
+        <item>"化学"</item>
+        <item>"生物"</item>
+        <item>"历史"</item>
+        <item>"地理"</item>
+        <item>"政治"</item>
+        <item>"计算机"</item>
+    </string-array>
+    <string-array name="gender">
+        <item>性别</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string-array name="class_way">
+        <item>教学方式</item>
+        <item>网络教学</item>
+        <item>上门家教</item>
+    </string-array>
+    <string-array name="sort">
+        <item>综合排序</item>
+        <item>口碑排序</item>
+        <item>热度排序</item>
+    </string-array>
 </resources>

@@ -4,18 +4,31 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/APP/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.152" />
-        <entry key="..\:/APP/app/src/main/res/layout/activity_ask_tutor.xml" value="0.22" />
+        <entry key="..\:/APP/app/src/main/res/drawable/press_effect.xml" value="0.1515" />
+        <entry key="..\:/APP/app/src/main/res/drawable/press_effect3.xml" value="0.1515" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_ask_tutor.xml" value="0.1" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_asktutor_procedure.xml" value="0.14666666666666667" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_charge_standard.xml" value="0.16666666666666666" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_main.xml" value="0.1258741258741259" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_main2.xml" value="0.175" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_main_frame.xml" value="0.16666666666666666" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_member_benefit.xml" value="0.17395833333333333" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_message.xml" value="0.159375" />
-        <entry key="..\:/APP/app/src/main/res/layout/activity_person_space.xml" value="0.16666666666666666" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_person_space.xml" value="0.22" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_points_state.xml" value="0.17395833333333333" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_signup.xml" value="0.22" />
-        <entry key="..\:/APP/app/src/main/res/layout/activity_student_info_edit.xml" value="0.14666666666666667" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_student_info_edit.xml" value="0.16666666666666666" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_student_info_show.xml" value="0.22" />
-        <entry key="..\:/APP/app/src/main/res/layout/activity_subject_choose.xml" value="0.22" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_student_mainpage.xml" value="0.16666666666666666" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_student_space.xml" value="0.175" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_subject_choose.xml" value="0.1" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_teacher_info_edit.xml" value="0.22" />
         <entry key="..\:/APP/app/src/main/res/layout/activity_teacher_info_show.xml" value="0.22" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_teacher_list.xml" value="0.22" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_teacher_main_frame.xml" value="0.175" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_teacher_mainpage.xml" value="0.1" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_teacher_space.xml" value="0.22" />
+        <entry key="..\:/APP/app/src/main/res/layout/activity_tutor_help.xml" value="0.1" />
         <entry key="..\:/APP/app/src/main/res/layout/content_main.xml" value="0.10416666666666667" />
         <entry key="..\:/APP/app/src/main/res/layout/fragment_first.xml" value="0.175" />
         <entry key="..\:/APP/app/src/main/res/layout/fragment_second.xml" value="0.175" />

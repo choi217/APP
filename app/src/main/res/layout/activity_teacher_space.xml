@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey"
-        tools:context=".ask_tutor">
-
+        android:background="@color/grey">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,13 +59,12 @@
                     android:id="@+id/logout"
                     android:layout_width="90dp"
                     android:layout_height="60dp"
-                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:text="退出"
+                    android:layout_marginLeft="310dp"
                     android:textColor="@color/orange"
                     android:textSize="30dp" />
             </RelativeLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
@@ -78,30 +72,34 @@
                 android:padding="0dp">
 
                 <Button
+                    android:id="@+id/points_state"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/yellow"
-                    android:text="请家教流程"
+                    android:text="积分说明"
                     android:textColor="@color/black" />
 
                 <Button
+                    android:id="@+id/charge_standard"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/yellow"
                     android:text="收费标准"
+                    android:layout_marginLeft="2dp"
                     android:textColor="@color/black" />
 
                 <Button
+                    android:id="@+id/tutor_help"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/yellow"
-                    android:text="会员权益"
+                    android:layout_marginLeft="2dp"
+                    android:text="家教帮助"
                     android:textColor="@color/black" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -112,157 +110,110 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="充值"
+                    android:background="@drawable/press_effect2"
+                    android:text="我的提现"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="体现"
+                    android:background="@drawable/press_effect2"
+                    android:text="银行账号信息"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="银行"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="流水"
+                    android:background="@drawable/press_effect2"
+                    android:text="财务记录"
                     android:textColor="@color/black" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:padding="0dp">
 
                 <Button
-                    android:id="@+id/space_myteachers"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="我的老师"
+                    android:background="@drawable/press_effect2"
+                    android:text="我的接单记录"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@drawable/press_effect2"
                     android:text="我的课程"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="我的约课"
+                    android:background="@drawable/press_effect2"
+                    android:text="学员的约课"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/press_effect2"
+                    android:text="课程设置"
                     android:textColor="@color/black" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:padding="0dp">
+                android:padding="0dp"
+                android:layout_marginTop="5dp">
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="我的视频课"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
-                    android:layout_weight="2"
-                    android:background="@color/white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="0dp"
-                android:padding="5dp">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="5"
-                    android:background="@color/white"
-                    android:text="签到领现金"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="7"
-                    android:background="@color/white"
-                    android:text="请家教反现金"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="0dp"
-                android:padding="0dp">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="挑选教员"
+                    android:background="@drawable/press_effect2"
+                    android:text="挑选学员"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="快速请家教"
+                    android:background="@drawable/press_effect2"
+                    android:text="申请的订单"
+                    android:layout_marginLeft="2dp"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="请家教订单"
+                    android:background="@drawable/press_effect2"
+                    android:text="我的评价"
+                    android:layout_marginLeft="2dp"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="联系客服"
+                    android:background="@drawable/press_effect2"
+                    android:text="我的录播课"
+                    android:layout_marginLeft="2dp"
                     android:textColor="@color/black" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -275,35 +226,41 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="我的收藏"
+                    android:background="@drawable/press_effect2"
+                    android:text="教员简历修改"
+                    android:layout_marginTop="2dp"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="我的优惠券"
+                    android:background="@drawable/press_effect2"
+                    android:text="简历状态修改"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
-                    android:text="修改资料"
+                    android:background="@drawable/press_effect2"
+                    android:text="证件管理"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
                     android:textColor="@color/black" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@drawable/press_effect2"
                     android:text="修改密码"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
                     android:textColor="@color/black" />
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -313,14 +270,13 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/white"
+                    android:background="@drawable/press_effect2"
                     android:text="关注公众号
                                        >"
                     android:textColor="@color/black"
                     android:textSize="17dp"
                     android:textStyle="bold" />
             </LinearLayout>
-
         </LinearLayout>
 
     </ScrollView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/g"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/procedure_back"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="@drawable/backbutton"
+        android:layout_gravity="top"
+        android:layout_marginLeft="0dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:textSize="30sp"
+        android:text="请家教流程"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:textSize="30sp"
+        android:text="  ①   在教员库中自主挑选教员"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:textSize="30sp"
+        android:text="   或  通过在线下单告知需求，我们帮您推荐。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:textSize="30sp"
+        android:text="  ②   教员和您联系，约定试讲时间，如果对教员不满意，可以更换教员。"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="30sp"
+        android:text="  ③   通过学院中心在线约课"/>
+</LinearLayout>

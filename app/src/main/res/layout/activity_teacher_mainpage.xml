@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/e"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="30sp"
+        android:text="我的主页"
+        android:gravity="center"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:text="          点此查看我教授过的全部课程："
+        android:textStyle="bold"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/press_effect2"
+        android:layout_gravity="center"
+        android:text="我的授课记录"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:text="          点此查看我最近的约课："
+        android:textStyle="bold"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/press_effect2"
+        android:layout_gravity="center"
+        android:text="学员的约课"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:text="          点此查看我的录播课："
+        android:textStyle="bold"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/press_effect2"
+        android:layout_gravity="center"
+        android:text="我的录播课"
+        android:textSize="25sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:text="          点此查看学员订单库："
+        android:textStyle="bold"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/press_effect2"
+        android:layout_gravity="center"
+        android:text="挑选学员"
+        android:textSize="25sp"/>
+
+</LinearLayout>

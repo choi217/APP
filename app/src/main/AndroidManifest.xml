@@ -19,7 +19,7 @@
         android:theme="@style/Theme.Myapp"
         tools:targetApi="31">
         <activity
-            android:name="subject_choose"
+            android:name=".student_mainpage"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
@@ -50,12 +50,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".person_space"
+            android:name=".student_space"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".main_frame"
             android:exported="false"/>
+        <activity
+            android:name=".teacher_list"
+            android:exported="false" />
+        <activity android:name=".asktutor_procedure" />
+        <activity android:name=".charge_standard" />
+        <activity android:name=".member_benefit" />
+        <activity android:name=".teacher_main_frame" />
+        <activity android:name=".points_state" />
+        <activity android:name=".tutor_help" />
+
     </application>
 
 </manifest>
