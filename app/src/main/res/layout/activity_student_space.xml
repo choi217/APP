@@ -37,22 +37,12 @@
                     android:layout_height="40dp"
                     android:layout_below="@+id/text_username"
                     android:layout_gravity="center"
-                    android:text="余额："
+                    android:text="身份："
                     android:textColor="@color/white"
                     android:textSize="25sp" />
 
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/text_balance"
-                    android:background="@color/white"
-                    android:text="提现"
-                    android:textColor="@color/orange"
-                    android:textSize="20dp" />
-
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_below="@+id/text_balance"
                     android:layout_gravity="center"
@@ -65,8 +55,8 @@
                     android:layout_width="90dp"
                     android:layout_height="60dp"
                     android:layout_centerVertical="true"
-                    android:text="退出"
                     android:layout_marginLeft="310dp"
+                    android:text="退出"
                     android:textColor="@color/orange"
                     android:textSize="30dp" />
             </RelativeLayout>
@@ -107,47 +97,7 @@
                     android:textColor="@color/black" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_margin="0dp"
-                android:padding="0dp">
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="充值"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="提现"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="银行"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="2dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="流水"
-                    android:textColor="@color/black" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,7 +117,7 @@
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_weight="1"
                     android:background="@drawable/press_effect2"
                     android:text="我的课程"
@@ -176,7 +126,7 @@
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="0.05dp"
+                    android:layout_marginLeft="2dp"
                     android:layout_weight="1"
                     android:background="@drawable/press_effect2"
                     android:text="我的约课"
@@ -186,69 +136,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="5dp"
-                android:padding="0dp">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="我的视频课"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="2dp"
-                    android:layout_weight="2"
-                    android:background="@color/white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="0dp"
-                android:padding="5dp">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="5"
-                    android:background="@drawable/press_effect2"
-                    android:text="签到领现金"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="7"
-                    android:background="@drawable/press_effect2"
-                    android:text="请家教反现金"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
                 android:layout_margin="0dp"
                 android:padding="0dp">
 
                 <Button
+                    android:id="@+id/choose_tutor"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/press_effect2"
                     android:text="挑选教员"
                     android:textColor="@color/black" />
 
                 <Button
+                    android:id="@+id/ask_tutor"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/press_effect2"
                     android:text="快速请家教"
                     android:layout_marginLeft="2dp"
@@ -258,17 +164,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_marginTop="5dp"
                     android:background="@drawable/press_effect2"
                     android:text="请家教订单"
-                    android:layout_marginLeft="2dp"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="联系客服"
                     android:layout_marginLeft="2dp"
                     android:textColor="@color/black" />
             </LinearLayout>
@@ -278,27 +176,44 @@
                 android:layout_height="60dp"
                 android:layout_margin="0.05dp"
                 android:padding="0dp">
-
+                <Button
+                    android:id="@+id/kf"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/press_effect2"
+                    android:text="联系客服"
+                    android:onClick="kfclick"
+                    android:textColor="@color/black" />
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/press_effect2"
                     android:text="我的收藏"
-                    android:layout_marginTop="2dp"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="我的优惠券"
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="2dp"
                     android:textColor="@color/black" />
 
                 <Button
+                    android:id="@+id/info_show"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press_effect2"
+                    android:text="我的资料"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <Button
+                    android:id="@+id/info_edit"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -309,11 +224,21 @@
                     android:textColor="@color/black" />
 
                 <Button
+                    android:id="@+id/pw_edit"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/press_effect2"
                     android:text="修改密码"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black" />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press_effect2"
+                    android:text="注销账号"
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="2dp"
                     android:textColor="@color/black" />

@@ -54,7 +54,7 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".main_frame"
+            android:name=".student_main_frame"
             android:exported="false"/>
         <activity
             android:name=".teacher_list"
@@ -65,6 +65,8 @@
         <activity android:name=".teacher_main_frame" />
         <activity android:name=".points_state" />
         <activity android:name=".tutor_help" />
+        <activity android:name=".password_edit" />
+        <activity android:name=".password_forget" />
 
     </application>
 

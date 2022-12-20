@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class main_frame extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class student_main_frame extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView bottomNavigationView;
 
     @Override
