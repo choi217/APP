@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Looper;
@@ -21,7 +22,7 @@ public class signup extends AppCompatActivity {
     private String identification = null; //老师
     //邮件验证码初始化
     private EditText etInputEmail,etInputGetNum,etInputName; //邮箱，验证码，用户名
-    private String email="",name; //收件邮箱
+    private String email="",name; //收件邮箱, 用户名
     private long getnum=-100; //生成的验证码
     private EditText etInputPasswd1,etInputPasswd2; //两次密码
     private String passwd1,passwd2;
@@ -50,17 +51,27 @@ public class signup extends AppCompatActivity {
         m_btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //信息不能有空，验证码需要通过，两次密码不能不同，密码位数在8-20位之间
+                //信息不能有空，验证码需要通过，两次密码不能不同，密码位数在8-20位之间(用户名不能重复)
                 etInputName= (EditText) findViewById(R.id.ed_username);
                 etInputPasswd1= (EditText) findViewById(R.id.ed_password1);
                 etInputPasswd2= (EditText) findViewById(R.id.ed_password2);
                 name=etInputName.getText().toString();
                 passwd1=etInputPasswd1.getText().toString();
                 passwd2=etInputPasswd2.getText().toString();
+
                 boolean aa = (passwd1.equals(passwd2));
+                SQLiteDatabase db1;
+                db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
+
+                String tmp[]={name};
+                Cursor c = db1.rawQuery("SELECT * FROM user where username=?", tmp);
                 if (name.length()==0||passwd1.length()==0||passwd2.length()==0||
                         email.length()==0||getnum==-100||identification==null) {
                     Toast.makeText(getApplicationContext(),"信息不能有空",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else if (c.getCount() > 0) {
+                    Toast.makeText(getApplicationContext(),"用户名已被使用",Toast.LENGTH_LONG).show();
                     return;
                 }
                 else if (isVerification==0) {
@@ -77,8 +88,6 @@ public class signup extends AppCompatActivity {
                 }
 
                 //写入数据库
-                SQLiteDatabase db1;
-                db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
                 RandomNumber rn = new RandomNumber();
                 long tmpid = rn.getRandomNumber(7); //随机id
                 db1.execSQL("INSERT INTO user(id,username,password,email) values(?,?,?,?)", new Object[]{tmpid,name,passwd1,email});
