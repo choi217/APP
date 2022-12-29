@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class teacher_info_edit extends AppCompatActivity {
     private Button m_btn_submit;
     private Button edit_subject;
+    private Button m_btn_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,13 @@ public class teacher_info_edit extends AppCompatActivity {
                 AlertDialog ad = builder.create();
                 ad.show();
 
+            }
+        });
+        m_btn_back = findViewById(R.id.edit_back);
+        m_btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                teacher_info_edit.this.finish();
             }
         });
 

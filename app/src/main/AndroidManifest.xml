@@ -67,6 +67,7 @@
         <activity android:name=".tutor_help" />
         <activity android:name=".password_edit" />
         <activity android:name=".password_forget" />
+        <activity android:name=".gzh" />
 
     </application>
 

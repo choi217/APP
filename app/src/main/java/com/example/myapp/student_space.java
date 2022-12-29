@@ -126,6 +126,38 @@ public class student_space extends Fragment {
                         .show();
             }
         });
+        Button m_btn_gzh;
+        m_btn_gzh = getActivity().findViewById(R.id.gzh);
+        m_btn_gzh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), gzh.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_zhuxiao;
+        m_btn_zhuxiao = getActivity().findViewById(R.id.zhuxiao);
+        m_btn_zhuxiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setIcon(R.drawable.ic_baseline_person_24)
+                        .setTitle("注销账号")
+                        .setMessage("注销后，信息将被删除，该手机号将会被屏蔽，不能再做学员，是否确定注销？")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .setNegativeButton("取消",new DialogInterface.OnClickListener(){
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .create()
+                        .show();
+            }
+        });
     }
 
 }

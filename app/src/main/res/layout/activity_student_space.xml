@@ -132,6 +132,28 @@
                     android:text="我的约课"
                     android:textColor="@color/black" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:padding="0dp">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/press_effect2"
+                    android:text="我的视频课"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/press_effect2"
+                    android:textColor="@color/black" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -234,6 +256,7 @@
                     android:layout_marginTop="2dp"
                     android:textColor="@color/black" />
                 <Button
+                    android:id="@+id/zhuxiao"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -251,6 +274,7 @@
                 android:padding="0dp">
 
                 <Button
+                    android:id="@+id/gzh"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/press_effect2"

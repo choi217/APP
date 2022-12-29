@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="550dp"
         android:background="@color/grey">
         <LinearLayout
             android:layout_width="match_parent"
@@ -221,11 +221,13 @@
                 android:layout_margin="0.05dp"
                 android:padding="0dp">
                 <Button
+                    android:id="@+id/pw_edit"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/press_effect2"
-                    android:text="简历状态修改"
+                    android:text="密码修改"
+                    android:layout_marginLeft="2dp"
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black" />
 
@@ -254,18 +256,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="0.05dp">
-                <Button
-                    android:id="@+id/pw_edit"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/press_effect2"
-                    android:text="密码修改"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="2dp"
-                    android:textColor="@color/black" />
+
 
                 <Button
+                    android:id="@+id/zhuxiao"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -278,7 +272,7 @@
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:background="@drawable/press_effect2"
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="2dp"
@@ -291,6 +285,7 @@
                 android:padding="0dp">
 
                 <Button
+                    android:id="@+id/gzh"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/press_effect2"
