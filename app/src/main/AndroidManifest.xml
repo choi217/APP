@@ -68,6 +68,7 @@
         <activity android:name=".password_edit" />
         <activity android:name=".password_forget" />
         <activity android:name=".gzh" />
+        <activity android:name=".talk" />
 
     </application>
 
