@@ -69,6 +69,8 @@
         <activity android:name=".password_forget" />
         <activity android:name=".gzh" />
         <activity android:name=".talk" />
+        <activity android:name=".myteacher_list" />
+        <activity android:name=".myclass_list" />
 
     </application>
 

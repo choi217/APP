@@ -135,6 +135,24 @@ public class student_space extends Fragment {
                 startActivity(intent);
             }
         });
+        Button m_btn_myteachers;
+        m_btn_myteachers = getActivity().findViewById(R.id.my_teachers);
+        m_btn_myteachers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), myteacher_list.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_myclass;
+        m_btn_myclass = getActivity().findViewById(R.id.my_class);
+        m_btn_myclass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), myclass_list.class);
+                startActivity(intent);
+            }
+        });
         Button m_btn_zhuxiao;
         m_btn_zhuxiao = getActivity().findViewById(R.id.zhuxiao);
         m_btn_zhuxiao.setOnClickListener(new View.OnClickListener() {
