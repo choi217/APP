@@ -15,7 +15,7 @@ public class student_info_show extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_info_show);
         m_btn_edit = findViewById(R.id.btn_edit);
-        m_btn_back = findViewById(R.id.btn_back);
+        m_btn_back = findViewById(R.id.show_back);
         m_btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,8 +26,7 @@ public class student_info_show extends AppCompatActivity {
         m_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(student_info_show.this,main_frame.class);
-                startActivity(intent);
+                student_info_show.this.finish();
             }
         });
     }

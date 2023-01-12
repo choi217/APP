@@ -1,97 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="30dp"
+        android:background="@color/orange"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@drawable/backbutton"
+            android:layout_gravity="top"/>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:orientation="horizontal">
+            android:text="                         教员库"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal">
 
-                <Spinner
-                    android:id="@+id/province"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/grey"
-                    android:entries="@array/province"
-                    android:layout_gravity="center"
-                    android:spinnerMode="dialog"/>
+        <Spinner
+            android:id="@+id/province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/grey"
+            android:entries="@array/province"
+            android:layout_gravity="center"
+            android:spinnerMode="dialog"/>
 
-                <Spinner
-                    android:id="@+id/course"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/grey"
-                    android:layout_weight="1"
-                    android:entries="@array/course"
-                    android:layout_gravity="center"
-                    android:spinnerMode="dialog"/>
+        <Spinner
+            android:id="@+id/course"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:entries="@array/course"
+            android:layout_gravity="center"
+            android:spinnerMode="dialog"/>
+        <Spinner
+            android:id="@+id/education"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:entries="@array/education"
+            android:layout_gravity="center"
+            android:spinnerMode="dialog"/>
+    </LinearLayout>
 
-                <Spinner
-                    android:id="@+id/education"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:background="@color/grey"
-                    android:layout_weight="1"
-                    android:entries="@array/education"
-                    android:layout_gravity="center"
-                    android:spinnerMode="dialog"/>
-            </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/gender"
+            android:background="@color/grey"
+            android:layout_gravity="center"
+            android:spinnerMode="dialog"/>
+        <Spinner
+            android:id="@+id/class_way"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="@color/grey"
+            android:entries="@array/class_way"
+            android:layout_gravity="center"
+            android:spinnerMode="dialog"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_marginTop="0.5dp"
-                android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/sort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:entries="@array/sort"
+            android:layout_gravity="center"
+            android:spinnerMode="dialog"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:text="查询"
+        android:textSize="18sp"
+        android:layout_gravity="right"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/press_effect3"
+        android:gravity="center"
+        />
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </ListView>
 
-                <Spinner
-                    android:id="@+id/gender"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:entries="@array/gender"
-                    android:background="@color/grey"
-                    android:layout_gravity="center"
-                    android:spinnerMode="dialog"/>
-
-                <Spinner
-                    android:id="@+id/class_way"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:layout_weight="1"
-                    android:background="@color/grey"
-                    android:entries="@array/class_way"
-                    android:layout_gravity="center"
-                    android:spinnerMode="dialog"/>
-
-                <Spinner
-                    android:id="@+id/sort"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/grey"
-                    android:layout_marginLeft="2dp"
-                    android:layout_weight="1"
-                    android:entries="@array/sort"
-                    android:layout_gravity="center"
-                    android:spinnerMode="dialog"/>
-            </LinearLayout>
-            <ListView
-                android:id="@+id/listView"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
-            </ListView>
-        </LinearLayout>
-    </ScrollView>
-
-</FrameLayout>
+</LinearLayout>

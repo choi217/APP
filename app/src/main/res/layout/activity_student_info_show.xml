@@ -17,18 +17,18 @@
             android:orientation="horizontal"
             >
             <Button
-                android:id="@+id/btn_back"
-                android:layout_width="100dp"
-                android:layout_height="35dp"
-                android:background="@drawable/press_effect3"
-                android:text="回到主页"
-                android:textSize="20sp"/>
+                android:id="@+id/show_back"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="@drawable/backbutton"
+                android:layout_gravity="top"
+                android:layout_marginLeft="0dp" />
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="35dp"
                 android:text="个人信息展示"
                 android:textSize="20sp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="60dp"
                 android:gravity="right"
                 />
             <Button

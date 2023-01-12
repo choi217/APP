@@ -22,13 +22,11 @@ public class student_mainpage extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button m_btn_teacher;
         Button m_btn_student;
         Button m_btn_teacher_list;
-        m_btn_teacher = getActivity().findViewById(R.id.btn_teacher);
+        Button m_btn_video_list;
         m_btn_student = getActivity().findViewById(R.id.btn_student);
         m_btn_teacher_list = getActivity().findViewById(R.id.btn_teacher_list);
-        //请家教按键：跳转到申请家教的表单页面，填写表单，提交申请
         m_btn_student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,12 +34,11 @@ public class student_mainpage extends Fragment {
                 startActivity(intent);
             }
         });
-
-        //做教员按键：跳转到注册页面，选择注册成为教师
-        m_btn_teacher.setOnClickListener(new View.OnClickListener() {
+        m_btn_video_list = getActivity().findViewById(R.id.btn_video);
+        m_btn_video_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), signup.class);
+                Intent intent = new Intent(getActivity(), video_list.class);
                 startActivity(intent);
             }
         });
