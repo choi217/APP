@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="                         我的课程"
+            android:text="                         约课记录"
             android:textSize="20sp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -36,13 +36,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="18sp"
-            android:text="即将上课"/>
+            android:text="待确认"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="18sp"
-            android:text="待确认"/>
+            android:text="已确认"/>
     </LinearLayout>
     <ListView
         android:id="@+id/class_list"

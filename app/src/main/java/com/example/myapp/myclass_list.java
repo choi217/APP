@@ -3,6 +3,7 @@ package com.example.myapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class myclass_list extends AppCompatActivity {
     private List<Course> courseList = new ArrayList<>();
-
+    private Button m_btn_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,13 @@ public class myclass_list extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Course course = courseList.get(position);
                 Toast.makeText(myclass_list.this,course.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        m_btn_back = findViewById(R.id.btn_back);
+        m_btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myclass_list.this.finish();
             }
         });
     }
