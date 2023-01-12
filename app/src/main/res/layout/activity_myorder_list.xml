@@ -17,12 +17,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="                         我的老师"
+            android:text="                         请家教订单"
             android:textSize="20sp"
             android:textStyle="bold"/>
     </LinearLayout>
+
     <ListView
-        android:id="@+id/teacher_list"
+        android:id="@+id/order_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

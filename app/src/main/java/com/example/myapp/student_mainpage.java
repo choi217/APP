@@ -24,13 +24,21 @@ public class student_mainpage extends Fragment {
         super.onActivityCreated(savedInstanceState);
         Button m_btn_student;
         Button m_btn_teacher_list;
+        Button m_btn_video_list;
         m_btn_student = getActivity().findViewById(R.id.btn_student);
         m_btn_teacher_list = getActivity().findViewById(R.id.btn_teacher_list);
-        //请家教按键：跳转到申请家教的表单页面，填写表单，提交申请
         m_btn_student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ask_tutor.class);
+                startActivity(intent);
+            }
+        });
+        m_btn_video_list = getActivity().findViewById(R.id.btn_video);
+        m_btn_video_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), video_list.class);
                 startActivity(intent);
             }
         });

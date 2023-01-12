@@ -17,36 +17,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="                         约课记录"
+            android:text="                         我的收藏"
             android:textSize="20sp"
             android:textStyle="bold"/>
     </LinearLayout>
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="全部"
-            android:textSize="18sp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:text="待确认"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:text="已确认"/>
-    </LinearLayout>
+        android:layout_height="35dp"
+        android:text="  这里是你收藏的喜欢的教员信息！"
+        android:textSize="16sp"/>
+
     <ListView
-        android:id="@+id/appointment_list"
+        android:id="@+id/collect_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>

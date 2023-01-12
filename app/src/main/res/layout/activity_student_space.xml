@@ -125,6 +125,7 @@
                     android:textColor="@color/black" />
 
                 <Button
+                    android:id="@+id/my_appointment"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="2dp"
@@ -140,6 +141,7 @@
                 android:padding="0dp">
 
                 <Button
+                    android:id="@+id/my_video"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -184,6 +186,7 @@
                     android:textColor="@color/black" />
 
                 <Button
+                    android:id="@+id/my_order"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -210,6 +213,7 @@
                     android:onClick="kfclick"
                     android:textColor="@color/black" />
                 <Button
+                    android:id="@+id/my_collect"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

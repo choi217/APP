@@ -71,6 +71,11 @@
         <activity android:name=".talk" />
         <activity android:name=".myteacher_list" />
         <activity android:name=".myclass_list" />
+        <activity android:name=".myappointment_list" />
+        <activity android:name=".myvideo_list" />
+        <activity android:name=".mycollect_list" />
+        <activity android:name=".myorder_list" />
+        <activity android:name=".video_list" />
 
     </application>
 

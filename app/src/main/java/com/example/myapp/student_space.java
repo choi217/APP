@@ -153,6 +153,42 @@ public class student_space extends Fragment {
                 startActivity(intent);
             }
         });
+        Button m_btn_myappointment;
+        m_btn_myappointment = getActivity().findViewById(R.id.my_appointment);
+        m_btn_myappointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), myappointment_list.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_myvideo;
+        m_btn_myvideo = getActivity().findViewById(R.id.my_video);
+        m_btn_myvideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), myvideo_list.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_mycollect;
+        m_btn_mycollect = getActivity().findViewById(R.id.my_collect);
+        m_btn_mycollect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), mycollect_list.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_myorder;
+        m_btn_myorder = getActivity().findViewById(R.id.my_order);
+        m_btn_myorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), myorder_list.class);
+                startActivity(intent);
+            }
+        });
         Button m_btn_zhuxiao;
         m_btn_zhuxiao = getActivity().findViewById(R.id.zhuxiao);
         m_btn_zhuxiao.setOnClickListener(new View.OnClickListener() {
