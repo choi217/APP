@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +30,8 @@ public class video_list extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Videoclass vc = vcList.get(position);
                 Toast.makeText(video_list.this,vc.getName(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(video_list.this,video_info.class);
+                startActivity(intent);
             }
         });
         m_btn_back = findViewById(R.id.btn_back);

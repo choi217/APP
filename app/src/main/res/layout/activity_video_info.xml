@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/orange"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/back"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="@drawable/backbutton"
+                android:layout_gravity="top"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="                           视频课"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    <!--主界面的三个按钮和一个播放控件-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:text="Play"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnPause"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pause"
+                android:textSize="20sp"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnReplay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Replay"
+                android:textSize="20sp"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <!--VideoView 作为视频播放时的显示位置-->
+        <VideoView
+            android:id="@+id/video_play"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="主讲老师"
+                android:gravity="center"
+                android:textSize="19sp"/>
+            <TextView
+                android:id="@+id/tv_teacher"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:text="孙老师"
+                android:gravity="center"
+                android:textSize="19sp"/>
+            <TextView
+                android:id="@+id/money"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:textSize="25sp"
+                android:text="免费"
+                android:gravity="center"
+                android:textColor="@color/green"/>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="购买并收藏"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="课程简介"
+            android:textSize="20sp"
+            android:gravity="bottom"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:textSize="20sp"
+            android:text="这里是课程简介"/>
+    </LinearLayout>
+</ScrollView>
+

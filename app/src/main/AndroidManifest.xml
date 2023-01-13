@@ -76,6 +76,15 @@
         <activity android:name=".mycollect_list" />
         <activity android:name=".myorder_list" />
         <activity android:name=".video_list" />
+        <activity android:name=".teacher_order" />
+        <activity android:name=".select_student" />
+        <activity android:name=".id_card" />
+        <activity android:name=".teacher_class" />
+        <activity android:name=".teacher_appointment" />
+        <activity android:name=".give_class" />
+        <activity android:name=".eval_list" />
+        <activity android:name=".teacher_video" />
+        <activity android:name=".video_info" />
 
     </application>
 

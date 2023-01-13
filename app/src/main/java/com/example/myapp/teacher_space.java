@@ -115,6 +115,78 @@ public class teacher_space extends Fragment {
                 startActivity(intent);
             }
         });
+        Button m_btn_order;
+        m_btn_order = getActivity().findViewById(R.id.my_order);
+        m_btn_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), teacher_order.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_select;
+        m_btn_select = getActivity().findViewById(R.id.select);
+        m_btn_select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), select_student.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_card;
+        m_btn_card = getActivity().findViewById(R.id.my_card);
+        m_btn_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), id_card.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_class;
+        m_btn_class = getActivity().findViewById(R.id.my_class);
+        m_btn_class.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), teacher_class.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_appoint;
+        m_btn_appoint = getActivity().findViewById(R.id.appointment);
+        m_btn_appoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), teacher_appointment.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_gclass;
+        m_btn_gclass = getActivity().findViewById(R.id.give_classes);
+        m_btn_gclass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), give_class.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_eval;
+        m_btn_eval = getActivity().findViewById(R.id.my_eval);
+        m_btn_eval.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), eval_list.class);
+                startActivity(intent);
+            }
+        });
+        Button m_btn_video;
+        m_btn_video = getActivity().findViewById(R.id.teacher_video);
+        m_btn_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), teacher_video.class);
+                startActivity(intent);
+            }
+        });
         Button m_btn_zhuxiao;
         m_btn_zhuxiao = getActivity().findViewById(R.id.zhuxiao);
         m_btn_zhuxiao.setOnClickListener(new View.OnClickListener() {

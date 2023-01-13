@@ -1,28 +1,26 @@
 package com.example.myapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
-public class VideoAdapter extends ArrayAdapter<Video> {
+public class TorderAdapter extends ArrayAdapter<Torder> {
     private int resourceId;
 
-    public VideoAdapter(Context context, int textViewResourceId, List<Video> objects){
+    public TorderAdapter(Context context, int textViewResourceId, List<Torder> objects){
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        Video video = getItem(position);
+        Torder torder = getItem(position);
         View view;
         if(convertView == null){
             view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
@@ -30,10 +28,14 @@ public class VideoAdapter extends ArrayAdapter<Video> {
         else{
             view = convertView;
         }
-        TextView name =  (TextView) view.findViewById(R.id.video_name);
-        name.setText(video.getName());
-        TextView state =  (TextView) view.findViewById(R.id.video_state);
-        state.setText(video.getState());
+        TextView num =  (TextView) view.findViewById(R.id.order_num);
+        num.setText(torder.getNum());
+        TextView course =  (TextView) view.findViewById(R.id.order_course);
+        course.setText(torder.getCourse());
+        TextView place =  (TextView) view.findViewById(R.id.order_place);
+        place.setText(torder.getPlace());
+        TextView people =  (TextView) view.findViewById(R.id.order_people);
+        people.setText(torder.getPeople());
         return view;
     }
 }
