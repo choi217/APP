@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +31,8 @@ public class myteacher_list extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Teacher tea = teaList.get(position);
                 Toast.makeText(myteacher_list.this,tea.getName(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(myteacher_list.this,teacher_info_show.class);
+                startActivity(intent);
             }
         });
         m_btn_back = findViewById(R.id.btn_back);
