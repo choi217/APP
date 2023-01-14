@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class myvideo_list extends AppCompatActivity {
+public class teacher_video extends AppCompatActivity {
     private List<Video> videoList = new ArrayList<>();
     private Button m_btn_back;
     @Override
@@ -22,21 +22,21 @@ public class myvideo_list extends AppCompatActivity {
         setContentView(R.layout.activity_myvideo_list);
 
         init();
-        VideoAdapter adapter = new VideoAdapter(myvideo_list.this,R.layout.video_list_item,videoList);
+        VideoAdapter adapter = new VideoAdapter(teacher_video.this,R.layout.video_list_item,videoList);
         ListView listView = (ListView) findViewById(R.id.video_list);
         listView.setAdapter(adapter);
         m_btn_back = findViewById(R.id.btn_back);
         m_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myvideo_list.this.finish();
+                teacher_video.this.finish();
             }
         });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Video video = videoList.get(position);
-                Intent intent = new Intent(myvideo_list.this,video_info.class);
+                Intent intent = new Intent(teacher_video.this,video_info.class);
                 startActivity(intent);
             }
         });

@@ -1,28 +1,25 @@
 package com.example.myapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
-public class VideoAdapter extends ArrayAdapter<Video> {
+public class EvaluateAdapter extends ArrayAdapter<Evaluate> {
     private int resourceId;
 
-    public VideoAdapter(Context context, int textViewResourceId, List<Video> objects){
+    public EvaluateAdapter(Context context, int textViewResourceId, List<Evaluate> objects){
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        Video video = getItem(position);
+        Evaluate evaluate = getItem(position);
         View view;
         if(convertView == null){
             view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
@@ -30,10 +27,12 @@ public class VideoAdapter extends ArrayAdapter<Video> {
         else{
             view = convertView;
         }
-        TextView name =  (TextView) view.findViewById(R.id.video_name);
-        name.setText(video.getName());
-        TextView state =  (TextView) view.findViewById(R.id.video_state);
-        state.setText(video.getState());
+        TextView eval =  (TextView) view.findViewById(R.id.evaluate);
+        eval.setText(evaluate.getEvaluate());
+        TextView id =  (TextView) view.findViewById(R.id.eval_id);
+        id.setText(evaluate.getId());
+        TextView content = (TextView) view.findViewById(R.id.eval_content);
+        content.setText(evaluate.getContent());
         return view;
     }
 }

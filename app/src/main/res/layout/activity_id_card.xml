@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/orange"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:background="@drawable/backbutton"
+            android:layout_gravity="top"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="                          证件管理"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:text="上 传 证 件"
+        android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="18sp"
+        android:text="【提示信息】：您可以上传身份证、学生证、教师资格证、最高学历毕业证、工作证或聘用合同等。照片上的证件号码务必拍摄清晰。证件仅限APP内部对教员身份的审核，不对外公开。敬请放心！"/>
+
+</LinearLayout>
