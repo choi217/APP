@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class teacher_mainpage extends Fragment {
+    public String teacherid;
 
     @Nullable
     @Override

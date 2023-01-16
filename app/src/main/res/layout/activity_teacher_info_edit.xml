@@ -16,15 +16,8 @@
             android:layout_height="35dp"
             android:orientation="horizontal"
             >
-            <Button
-                android:id="@+id/edit_back"
-                android:layout_width="40dp"
-                android:layout_height="30dp"
-                android:background="@drawable/backbutton"
-                android:layout_gravity="top"
-                android:layout_marginLeft="0dp" />
             <TextView
-                android:layout_width="210dp"
+                android:layout_width="250dp"
                 android:layout_height="35dp"
                 android:text="个人信息编辑"
                 android:textSize="20sp"
@@ -352,12 +345,11 @@
             <EditText
                 android:id="@+id/edit_salary"
                 android:layout_width="250dp"
-                android:layout_height="30dp"
-                android:textSize="20sp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/edit_info"
                 android:layout_marginLeft="10dp"
-                />
+                android:background="@drawable/edit_info"
+                android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -396,13 +388,16 @@
             android:layout_marginTop="5dp"
             android:text="其他信息(包括自我描述、荣誉认证等）:"
             android:textSize="20sp"/>
+
         <EditText
+            android:id="@+id/edit_inf"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:textSize="20sp"
-            android:maxLines="4"
+            android:layout_marginTop="10dp"
             android:background="@drawable/edit_info"
-            android:layout_marginTop="10dp"/>
+            android:maxLines="4"
+            android:textSize="20sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"

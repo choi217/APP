@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class student_mainpage extends Fragment {
-
+    public String studentid;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class student_mainpage extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        System.out.println("mainpage"+studentid);
         Button m_btn_student;
         Button m_btn_teacher_list;
         Button m_btn_video_list;
@@ -31,6 +32,7 @@ public class student_mainpage extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ask_tutor.class);
+                intent.putExtra("userid",studentid);
                 startActivity(intent);
             }
         });
@@ -39,6 +41,7 @@ public class student_mainpage extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), video_list.class);
+                intent.putExtra("userid",studentid);
                 startActivity(intent);
             }
         });
@@ -47,6 +50,7 @@ public class student_mainpage extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_list.class);
+                intent.putExtra("userid",studentid);
                 startActivity(intent);
             }
         });

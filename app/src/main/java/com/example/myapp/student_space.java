@@ -5,8 +5,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,8 +18,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class student_space extends Fragment {
-
-
+    public String studentid;
+    private SQLiteDatabase sqldb;
 
     @Nullable
     @Override
@@ -77,6 +80,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), student_info_show.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -86,6 +90,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), student_info_edit.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -104,6 +109,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.putExtra("logout","1");
                 startActivity(intent);
             }
         });

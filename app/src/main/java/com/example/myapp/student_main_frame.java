@@ -6,19 +6,26 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class student_main_frame extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView bottomNavigationView;
-
+    private String studentid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_frame);
+        Intent intent =getIntent();
+        studentid = intent.getStringExtra("studentid");
+        System.out.println("main frame id" + studentid);
         if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new student_mainpage()).commit();
+            student_mainpage student_mainpage = new student_mainpage();
+            student_mainpage.studentid =studentid;
+            replaceFragment(student_mainpage);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,student_mainpage).commit();
         }
         initView();
         //replaceFragment(new subject_choose());
@@ -38,15 +45,21 @@ public class student_main_frame extends AppCompatActivity implements BottomNavig
         int itemId = menuItem.getItemId();//获取点击的位置以及对应的id
         switch (itemId) {
             case R.id.home:
-                replaceFragment(new student_mainpage());
+                student_mainpage student_mainpage = new student_mainpage();
+                student_mainpage.studentid =studentid;
+                replaceFragment(student_mainpage);
                 menuItem.setChecked(true);
                 break;
             case R.id.message:
-                replaceFragment(new message());
+                message message =new message();
+                message.userid =studentid;
+                replaceFragment(message);
                 menuItem.setChecked(true);
                 break;
             case R.id.person:
-                replaceFragment(new student_space());
+                student_space student_space =new student_space();
+                student_space.studentid = studentid;
+                replaceFragment(student_space);
                 menuItem.setChecked(true);
                 break;
         }

@@ -6,19 +6,24 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class teacher_main_frame extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView bottomNavigationView;
-
+    private String teacherid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_main_frame);
+        Intent intent =getIntent();
+        teacherid = intent.getStringExtra("teacherid");
+        System.out.println("main frame id" + teacherid);
         if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new teacher_mainpage()).commit();
+            teacher_mainpage teacher_mainpage = new teacher_mainpage();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment,teacher_mainpage).commit();
         }
         initView();
         //replaceFragment(new subject_choose());
@@ -55,6 +60,9 @@ public class teacher_main_frame extends AppCompatActivity implements BottomNavig
 
     //替换Fragment的方法
     public void replaceFragment(Fragment fragment) {
+        Bundle bundle = new Bundle();
+        bundle.putString("teacherid",teacherid);
+        fragment.setArguments(bundle);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.fragment, fragment);

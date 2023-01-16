@@ -201,6 +201,12 @@
                 android:textSize="20sp"
                 android:layout_marginLeft="10dp"
                 />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="联系电话:"
+                android:textSize="20sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -226,11 +232,6 @@
             android:orientation="horizontal"
             android:layout_marginTop="5dp"
             >
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:text="联系电话:"
-                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/show_phone"
@@ -399,6 +400,7 @@
             android:text="其他信息(包括自我描述、荣誉认证等）:"
             android:textSize="20sp"/>
         <TextView
+            android:id="@+id/show_info"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:textSize="20sp"

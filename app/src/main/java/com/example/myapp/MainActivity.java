@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -27,20 +28,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = getIntent();
+        String logout = intent.getStringExtra("logout");
+        if(logout==null )
+        {
+            DBHelper db;
+            db = new DBHelper(this);
+            try {
+                db.createDB();
+            } catch (IOException ioe) {
+                throw new Error("Database not created....");
+            }
 
-        DBHelper db;
-        db = new DBHelper(this);
-        try {
-            db.createDB();
-        } catch (IOException ioe) {
-            throw new Error("Database not created....");
-        }
-
-        try {
-            db.openDB();
-            db.close();
-        } catch (SQLException sqle) {
-            throw sqle;
+            try {
+                db.openDB();
+                db.close();
+            } catch (SQLException sqle) {
+                throw sqle;
+            }
         }
 
         SQLiteDatabase db1;
@@ -68,14 +73,26 @@ public class MainActivity extends AppCompatActivity {
                 String args[] = {name};
                 Cursor c = db1.rawQuery("SELECT * FROM user where username=?", args);
                 String pas = "";
+                int studentid = -1;
+                int teacherid = -1;
                 if (c.getCount() > 0) {
                     c.moveToFirst();
                     pas = c.getString(c.getColumnIndex("password"));
+                    teacherid = c.getInt(c.getColumnIndex("teacherid"));
+                    studentid = c.getInt(c.getColumnIndex("studentid"));
                     boolean aa = (pas.equals(pwd));
                     if (aa&&pas.length()>0) {
                         Toast.makeText(getApplicationContext(), "登录成功", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(MainActivity.this, student_main_frame.class);
-                        startActivity(intent);
+                        if(teacherid>=0){
+                            System.out.println(teacherid);
+                            Intent intent = new Intent(MainActivity.this, teacher_main_frame.class);
+                            intent.putExtra("teacherid",""+teacherid);
+                            startActivity(intent);
+                        }else{
+                            Intent intent = new Intent(MainActivity.this, student_main_frame.class);
+                            intent.putExtra("studentid",""+studentid);
+                            startActivity(intent);
+                        }
                     } else {
                         Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_LONG).show();
                     }

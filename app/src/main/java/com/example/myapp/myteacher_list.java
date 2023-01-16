@@ -41,9 +41,9 @@ public class myteacher_list extends AppCompatActivity {
         });
     }
     private void init(){
-        Teacher a = new Teacher("王狗蛋", R.drawable.a);
+        Teacher a = new Teacher("王狗蛋", R.drawable.a,"123");
         teaList.add(a);
-        Teacher b = new Teacher("王铁蛋", R.drawable.b);
+        Teacher b = new Teacher("王铁蛋", R.drawable.b,"123");
         teaList.add(b);
     }
 
