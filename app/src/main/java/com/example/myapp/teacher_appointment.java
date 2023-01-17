@@ -29,7 +29,7 @@ public class teacher_appointment extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Appointment appointment = apList.get(position);
-                Toast.makeText(teacher_appointment.this,appointment.getCourse(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(teacher_appointment.this,appointment.getCoursename(),Toast.LENGTH_SHORT).show();
             }
         });
         m_btn_back = findViewById(R.id.btn_back);
@@ -41,9 +41,9 @@ public class teacher_appointment extends AppCompatActivity {
         });
     }
     private void init(){
-        Appointment a = new Appointment("语文","2023.1.30");
+        Appointment a = new Appointment("语文");
         apList.add(a);
-        Appointment b = new Appointment("数学", "2023.2.3");
+        Appointment b = new Appointment("数学");
         apList.add(b);
     }
 }

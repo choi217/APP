@@ -28,9 +28,9 @@ public class ApAdapter extends ArrayAdapter<Appointment> {
             view = convertView;
         }
         TextView apCourse =  (TextView) view.findViewById(R.id.ap_course);
-        apCourse.setText(appointment.getCourse());
+        apCourse.setText(appointment.getCoursename());
         TextView apState =  (TextView) view.findViewById(R.id.ap_state);
-        apState.setText(appointment.getState());
+        apState.setText(appointment.getTeachername()+"|"+appointment.getDate());
         return view;
     }
 }

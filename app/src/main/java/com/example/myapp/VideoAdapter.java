@@ -33,7 +33,7 @@ public class VideoAdapter extends ArrayAdapter<Video> {
         TextView name =  (TextView) view.findViewById(R.id.video_name);
         name.setText(video.getName());
         TextView state =  (TextView) view.findViewById(R.id.video_state);
-        state.setText(video.getState());
+        state.setText("￥"+ video.getPrice() + "|" +video.getGrade());
         return view;
     }
 }

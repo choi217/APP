@@ -1,5 +1,10 @@
 package com.example.myapp;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,11 +20,14 @@ import java.util.List;
 public class myorder_list extends AppCompatActivity {
     private List<Order> orderList = new ArrayList<>();
     private Button m_btn_back;
+    private String studentid;
+    private SQLiteDatabase sqldb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myorder_list);
-
+        Intent intent= getIntent();
+        studentid =intent.getStringExtra("studentid");
         init();
         OrderAdapter adapter = new OrderAdapter(myorder_list.this,R.layout.order_list_item,orderList);
         ListView listView = (ListView) findViewById(R.id.order_list);
@@ -31,11 +39,26 @@ public class myorder_list extends AppCompatActivity {
                 myorder_list.this.finish();
             }
         });
+
     }
+    @SuppressLint("Range")
     private void init(){
-        Order a = new Order("订单信息：订单号：98923 三年级 科目：语文","老师信息：未预约","价格：待定");
-        orderList.add(a);
-        Order b = new Order("订单信息：订单号：93423 高一 科目：数学", "老师信息：已预约","价格：每小时100元");
-        orderList.add(b);
+        orderList.clear();
+        String args[] = {studentid};
+        sqldb = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
+        Cursor c = sqldb.rawQuery("SELECT * FROM orderlists where userid=?", args);
+        if (c != null && c.getCount() > 0) {
+            while (c.moveToNext()) {
+                String id = c.getString(c.getColumnIndex("id"));
+                Order a = new Order(id);
+                a.setGrade(c.getString(c.getColumnIndex("grade")));
+                a.setSubject(c.getString(c.getColumnIndex("subject")));
+                a.setSalary(c.getString(c.getColumnIndex("salary")));
+                a.setTaketeacherid(c.getString(c.getColumnIndex("taketeacherid")));
+                orderList.add(a);
+            }
+            c.close();
+        }
+        sqldb.close();
     }
 }

@@ -143,11 +143,15 @@ public class ask_tutor extends AppCompatActivity {
                 String taket = "-1";
                 SQLiteDatabase db1;
                 db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
+                String args[]={};
+                Cursor c= db1.rawQuery("SELECT id FROM orderlists",args);
+                int count = c.getCount() +1;
+                c.close();
                 try {
                     db1.execSQL("INSERT INTO orderlists(phone,home,teachplace,sex,grade,subject,time,describe" +
-                            ",request,teachmethod,userid,taketeacherid,salary) values(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                            ",request,teachmethod,userid,taketeacherid,salary,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)",
                             new Object[]{phone,address,stech_address,sex,grade,ssubject,time,sdescribe,steacher_request,
-                            online,studentid,taket,ssalary_request});
+                            online,studentid,taket,ssalary_request,count+""});
                 }catch(Exception e){
                     e.printStackTrace();
                     e.toString();

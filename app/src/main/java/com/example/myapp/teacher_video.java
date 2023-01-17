@@ -42,9 +42,9 @@ public class teacher_video extends AppCompatActivity {
         });
     }
     private void init(){
-        Video a = new Video("语文成语","价格：0.00元 时长：55秒");
+        Video a = new Video("语文成语");
         videoList.add(a);
-        Video b = new Video("数学几何", "价格：10.00元 时长：1小时");
+        Video b = new Video("数学几何");
         videoList.add(b);
     }
 }

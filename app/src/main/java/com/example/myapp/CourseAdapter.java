@@ -30,7 +30,9 @@ public class CourseAdapter extends ArrayAdapter<Course> {
         TextView className =  (TextView) view.findViewById(R.id.class_name);
         className.setText(course.getName());
         TextView classState =  (TextView) view.findViewById(R.id.class_state);
-        classState.setText(course.getstate());
+        String text = course.getDate();
+        if(course.getDate().length()==0) text = course.getOlddate();
+        classState.setText(course.getTeachername()+"|"+text);
         return view;
     }
 }

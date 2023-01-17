@@ -1,21 +1,53 @@
 package com.example.myapp;
 
 public class Order {
-    private String order;
-    private String teacher;
-    private String money;
+    private String id;
+    private String grade;
+    private String subject;
+    private String taketeacherid;
+    private String salary;
 
-    public Order(String order, String teacher,String money){
-        this.order = order;
-        this.teacher = teacher;
-        this.money = money;
+    public Order(String id){
+        this.id= id;
     }
 
-    public String getOrder(){
-        return order;
+    public void setId(String id) {
+        this.id = id;
     }
-    public String getTeacher(){
-        return teacher;
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
-    public String getMoney() {return money;}
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public void setTaketeacherid(String taketeacherid) {
+        this.taketeacherid = taketeacherid;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public String getTaketeacherid() {
+        return taketeacherid;
+    }
 }

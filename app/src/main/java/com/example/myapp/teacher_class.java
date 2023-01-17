@@ -41,9 +41,9 @@ public class teacher_class extends AppCompatActivity {
         });
     }
     private void init(){
-        Course a = new Course("高三语文","基本信息");
+        Course a = new Course("高三语文");
         courseList.add(a);
-        Course b = new Course("高二地理", "基本信息");
+        Course b = new Course("高二地理");
         courseList.add(b);
     }
 }

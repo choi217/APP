@@ -16,14 +16,15 @@ import java.io.IOException;
 
 public class teacher_info_show extends AppCompatActivity {
     private Button m_btn_back;
-
+    private String teacherid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_info_show);
         SQLiteDatabase db1;
         db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
-
+        Intent intent= getIntent();
+        teacherid =intent.getStringExtra("teacherid");
         m_btn_back = findViewById(R.id.show_back);
         TextView id=findViewById(R.id.show_num);
         TextView username=findViewById(R.id.show_username);
@@ -41,7 +42,7 @@ public class teacher_info_show extends AppCompatActivity {
         TextView salary=findViewById(R.id.show_salary);
         TextView subject=findViewById(R.id.show_subject);
         TextView info=findViewById(R.id.show_info);
-        String a[]={"1000004"};//更改id处
+        String a[]={teacherid};//更改id处
         Cursor c = db1.rawQuery("SELECT * FROM teacher where id=?",a);
         if (c.getCount() > 0) {
             c.moveToFirst();
