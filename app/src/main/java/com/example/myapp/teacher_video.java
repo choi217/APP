@@ -25,7 +25,7 @@ public class teacher_video extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_video);
+        setContentView(R.layout.activity_myvideo_list);
         Intent intent=getIntent();
         uid=intent.getStringExtra("uid");
         init();
