@@ -26,18 +26,21 @@
         android:layout_height="45dp"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btn_all"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="全部"
             android:textSize="18sp"
             android:layout_weight="1"/>
         <Button
+            android:id="@+id/btn_in"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="18sp"
             android:text="正在授课"/>
         <Button
+            android:id="@+id/btn_out"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

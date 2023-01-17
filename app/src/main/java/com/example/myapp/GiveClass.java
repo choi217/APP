@@ -1,6 +1,6 @@
 package com.example.myapp;
 
-public class Appointment {
+public class GiveClass {
     private String studentid;
     private String teacherid;
     private String teachername;
@@ -9,11 +9,9 @@ public class Appointment {
     private String date;
     private String done;
     private String studentname;
-
     public void setStudentname(String studentname) {
         this.studentname = studentname;
     }
-
     public String getStudentname() {
         return studentname;
     }
@@ -26,8 +24,8 @@ public class Appointment {
         return done;
     }
 
-    public Appointment(String studentid){
-        this.studentid = studentid;
+    public GiveClass(String teacherid){
+        this.teacherid = teacherid;
     }
 
     public String getTeachername() {
@@ -78,5 +76,7 @@ public class Appointment {
     public void setCoursename(String coursename) {
         this.coursename = coursename;
     }
+
+
 
 }

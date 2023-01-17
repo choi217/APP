@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -14,15 +18,30 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class teacher_main_frame extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView bottomNavigationView;
     private String teacherid;
+    private String sphone,susername="";
+    @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_main_frame);
         Intent intent =getIntent();
         teacherid = intent.getStringExtra("teacherid");
+        SQLiteDatabase db=openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
+        Cursor c=db.rawQuery("SELECT * FROM teacher WHERE id=?",new String[]{teacherid});
+        if(c.getCount()>0)
+        {
+            c.moveToFirst();
+            sphone=c.getString(c.getColumnIndex("phone"));
+        }
+        c.close();
+        Cursor d=db.rawQuery("SELECT * FROM user WHERE id=?",new String[]{teacherid});
+        d.moveToFirst();
+        susername=d.getString(d.getColumnIndex("username"));
+        d.close();
         System.out.println("main frame id" + teacherid);
         if (savedInstanceState == null){
             teacher_mainpage teacher_mainpage = new teacher_mainpage();
+            teacher_mainpage.teacherid=teacherid;
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment,teacher_mainpage).commit();
         }
         initView();
@@ -43,15 +62,23 @@ public class teacher_main_frame extends AppCompatActivity implements BottomNavig
         int itemId = menuItem.getItemId();//获取点击的位置以及对应的id
         switch (itemId) {
             case R.id.home:
-                replaceFragment(new teacher_mainpage());
+                teacher_mainpage teacher_mainpage=new teacher_mainpage();
+                teacher_mainpage.teacherid=teacherid;
+                replaceFragment(teacher_mainpage);
                 menuItem.setChecked(true);
                 break;
             case R.id.message:
-                replaceFragment(new message());
+                message message=new message();
+                message.userid=teacherid;
+                replaceFragment(message);
                 menuItem.setChecked(true);
                 break;
             case R.id.person:
-                replaceFragment(new teacher_space());
+                teacher_space teacher_space=new teacher_space();
+                teacher_space.teacherid=teacherid;
+                teacher_space.sphone=sphone;
+                teacher_space.susername=susername;
+                replaceFragment(teacher_space);
                 menuItem.setChecked(true);
                 break;
         }
