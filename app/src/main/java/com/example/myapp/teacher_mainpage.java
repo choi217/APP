@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class teacher_mainpage extends Fragment {
+    public String teacherid;
 
     @Nullable
     @Override
@@ -28,6 +29,7 @@ public class teacher_mainpage extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), select_student.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -37,6 +39,7 @@ public class teacher_mainpage extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_appointment.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -46,6 +49,7 @@ public class teacher_mainpage extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(),give_class.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -55,6 +59,7 @@ public class teacher_mainpage extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(),teacher_video.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });

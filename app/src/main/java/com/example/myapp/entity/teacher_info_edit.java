@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.entity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,8 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myapp.R;
 
 
 public class teacher_info_edit extends AppCompatActivity {

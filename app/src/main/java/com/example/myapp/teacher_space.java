@@ -2,12 +2,14 @@ package com.example.myapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageSwitcher;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 public class teacher_space extends Fragment {
+    public String teacherid,sphone,susername="";
+    private SQLiteDatabase db;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -25,6 +29,12 @@ public class teacher_space extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Button m_btn_points;
+        TextView username=getActivity().findViewById(R.id.tv_username);
+        TextView phone=getActivity().findViewById(R.id.tv_phone);
+        TextView identity=getActivity().findViewById(R.id.tv_identity);
+        username.setText(susername);
+        phone.setText(sphone);
+        identity.setText("教师");
         m_btn_points = getActivity().findViewById(R.id.points_state);
         m_btn_points.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +67,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.putExtra("logout","1");
                 startActivity(intent);
             }
         });
@@ -66,6 +77,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_info_show.class);
+                intent.putExtra("teacherid",teacherid);
                 startActivity(intent);
             }
         });
@@ -75,6 +87,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_info_edit.class);
+                intent.putExtra("teacherid",teacherid);
                 startActivity(intent);
             }
         });
@@ -103,6 +116,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), password_edit.class);
+                intent.putExtra("userid",teacherid);
                 startActivity(intent);
             }
         });
@@ -121,6 +135,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_order.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -130,6 +145,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), select_student.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -148,6 +164,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_class.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -157,6 +174,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_appointment.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -166,6 +184,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), give_class.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -175,6 +194,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), eval_list.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });
@@ -184,6 +204,7 @@ public class teacher_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_video.class);
+                intent.putExtra("uid",""+teacherid);
                 startActivity(intent);
             }
         });

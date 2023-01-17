@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.myapp.entity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.example.myapp.R;
 import com.mysql.jdbc.util.ErrorMappingsDocGenerator;
 
 import java.io.IOException;

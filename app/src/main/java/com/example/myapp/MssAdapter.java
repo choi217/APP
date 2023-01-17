@@ -9,17 +9,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class CourseAdapter extends ArrayAdapter<Course> {
+public class MssAdapter extends ArrayAdapter<Messager> {
     private int resourceId;
-
-    public CourseAdapter(Context context, int textViewResourceId, List<Course> objects){
+    public MssAdapter(Context context, int textViewResourceId, List<Messager> objects){
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        Course course = getItem(position);
+        Messager messager = getItem(position);
         View view;
         if(convertView == null){
             view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
@@ -27,12 +26,10 @@ public class CourseAdapter extends ArrayAdapter<Course> {
         else{
             view = convertView;
         }
-        TextView className =  (TextView) view.findViewById(R.id.class_name);
-        className.setText(course.getName());
-        TextView classState =  (TextView) view.findViewById(R.id.class_state);
-        String text = course.getDate();
-        if(text==null || course.getDate().length()==0) text = course.getOlddate();
-        classState.setText(course.getTeachername()+"|"+text);
+        TextView apCourse =  (TextView) view.findViewById(R.id.ap_course);
+        apCourse.setText(messager.getOps());
+        TextView apState =  (TextView) view.findViewById(R.id.ap_state);
+        apState.setText(messager.getOname());
         return view;
     }
 }

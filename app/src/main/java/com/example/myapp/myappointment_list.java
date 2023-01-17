@@ -1,5 +1,10 @@
 package com.example.myapp;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,13 +19,16 @@ import java.util.List;
 
 public class myappointment_list extends AppCompatActivity {
     private List<Appointment> apList = new ArrayList<>();
-    private Button m_btn_back;
+    private Button m_btn_back,ap_done,ap_undone,ap_all;
+    private String studentid;
+    private SQLiteDatabase sqldb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myappointment_list);
-
-        init();
+        Intent intent =getIntent();
+        studentid = intent.getStringExtra("studentid");
+        init("%");
         ApAdapter adapter = new ApAdapter(myappointment_list.this,R.layout.appointment_list_item,apList);
         ListView listView = (ListView) findViewById(R.id.appointment_list);
         listView.setAdapter(adapter);
@@ -29,7 +37,7 @@ public class myappointment_list extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Appointment appointment = apList.get(position);
-                Toast.makeText(myappointment_list.this,appointment.getCourse(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(myappointment_list.this,appointment.getCoursename(),Toast.LENGTH_SHORT).show();
             }
         });
         m_btn_back = findViewById(R.id.btn_back);
@@ -39,11 +47,79 @@ public class myappointment_list extends AppCompatActivity {
                 myappointment_list.this.finish();
             }
         });
+        ap_all = findViewById(R.id.ap_all);
+        ap_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                init("%");
+                ApAdapter adapter = new ApAdapter(myappointment_list.this,R.layout.appointment_list_item,apList);
+                listView.setAdapter(adapter);
+            }
+        });
+        ap_done = findViewById(R.id.ap_done);
+        ap_done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                init("1");
+                ApAdapter adapter = new ApAdapter(myappointment_list.this,R.layout.appointment_list_item,apList);
+                listView.setAdapter(adapter);
+            }
+        });
+        ap_undone =findViewById(R.id.ap_undone);
+        ap_undone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                init("0");
+                ApAdapter adapter = new ApAdapter(myappointment_list.this,R.layout.appointment_list_item,apList);
+                listView.setAdapter(adapter);
+            }
+        });
     }
-    private void init(){
-        Appointment a = new Appointment("语文","2023.1.30");
-        apList.add(a);
-        Appointment b = new Appointment("数学", "2023.2.3");
-        apList.add(b);
+    @SuppressLint("Range")
+    private void init(String done){
+        apList.clear();
+        String args[] = {studentid,done};
+        sqldb = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
+        Cursor c = sqldb.rawQuery("SELECT * FROM appointment where studentid=? and done like ?", args);
+        ArrayList<String> cids = new ArrayList<>();
+        ArrayList<String> tids = new ArrayList<>();
+        ArrayList<String> dates = new ArrayList<>();
+        ArrayList<String> dones = new ArrayList<>();
+        System.out.println("done"+done);
+        if (c != null && c.getCount() > 0) {
+            while (c.moveToNext()) {
+                cids.add(c.getString(c.getColumnIndex("courseid")));
+                tids.add(c.getString(c.getColumnIndex("teacherid")));
+                dates.add(c.getString(c.getColumnIndex("date")));
+                dones.add(c.getString(c.getColumnIndex("done")));
+            }
+            c.close();
+        }
+        System.out.println(cids.size());
+        for(int i=0;i<cids.size();i++){
+            Appointment a = new Appointment(studentid);
+            a.setDate(dates.get(i));
+            a.setDone(dones.get(i));
+            String arg[] = {tids.get(i)};
+            System.out.println(arg[0]);
+            c = sqldb.rawQuery("SELECT * FROM teacher where id=?", arg);
+            if (c != null && c.getCount() > 0) {
+                while (c.moveToNext()) {
+                    a.setTeacherid(arg[0]);
+                    a.setTeachername(c.getString(c.getColumnIndex("name")));
+                }
+                c.close();
+            }
+            arg[0] = cids.get(i);
+            c = sqldb.rawQuery("SELECT * FROM course where id=?", arg);
+            if (c != null && c.getCount() > 0) {
+                while (c.moveToNext()) {
+                    a.setCourseid(arg[0]);
+                    a.setCoursename(c.getString(c.getColumnIndex("name")));
+                }
+                c.close();
+            }
+            apList.add(a);
+        }
     }
 }

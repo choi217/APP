@@ -72,29 +72,31 @@
             android:background="@color/grey"
             android:layout_gravity="center"
             android:spinnerMode="dialog"/>
+
         <Spinner
             android:id="@+id/class_way"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_marginLeft="2dp"
             android:layout_weight="1"
             android:background="@color/grey"
             android:entries="@array/class_way"
-            android:layout_gravity="center"
-            android:spinnerMode="dialog"/>
+            android:spinnerMode="dialog" />
 
         <Spinner
             android:id="@+id/sort"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/grey"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_marginLeft="2dp"
             android:layout_weight="1"
+            android:background="@color/grey"
             android:entries="@array/sort"
-            android:layout_gravity="center"
-            android:spinnerMode="dialog"/>
+            android:spinnerMode="dialog" />
     </LinearLayout>
     <Button
+        android:id="@+id/search"
         android:layout_width="80dp"
         android:layout_height="30dp"
         android:text="查询"

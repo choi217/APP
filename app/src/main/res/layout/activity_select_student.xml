@@ -14,35 +14,11 @@
             android:layout_height="30dp"
             android:background="@drawable/backbutton"
             android:layout_gravity="top"/>
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:text="本地学员"
-            android:textSize="15sp"/>
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="网络学员"
-            android:textSize="15sp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:orientation="horizontal">
-        <Button
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="全部订单"
-            android:textSize="18sp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="未预约订单"
-            android:textSize="18sp"
-            android:layout_weight="1"/>
+            android:text="                    订单中心  "
+            android:textSize="25sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,6 +55,14 @@
             android:entries="@array/gender"
             android:layout_gravity="center"
             android:spinnerMode="dialog"/>
+        <Button
+            android:id="@+id/con"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:background="@color/grey"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
     </LinearLayout>
     <ListView
         android:id="@+id/order_list"

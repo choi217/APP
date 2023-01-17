@@ -1,11 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
-        android:id="@+id/a"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:textSize="20sp"
-        android:text="聊天"/>
-</ScrollView>
+        android:layout_height="30dp"
+        android:background="@color/orange"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="消息"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/mssid"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_info"/>
+        <Button
+            android:id="@+id/msssearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/message_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

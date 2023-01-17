@@ -2,7 +2,10 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
@@ -16,11 +19,13 @@ import com.example.myapp.send_email;
 
 public class signup extends AppCompatActivity {
     private Button m_btn_signup;
-    private String identification = null;
+    private String identification = null; //老师
     //邮件验证码初始化
-    private EditText etInputEmail,etInputGetNum;
-    private long verificationCode=-100; //生成的验证码
-    private String email; //收件邮箱
+    private EditText etInputEmail,etInputGetNum,etInputName; //邮箱，验证码，用户名
+    private String email="",name; //收件邮箱, 用户名
+    private long getnum=-100; //生成的验证码
+    private EditText etInputPasswd1,etInputPasswd2; //两次密码
+    private String passwd1,passwd2;
     private long isVerification=0; //标记验证码是否验证成功，验证未成功不能注册
     private long LastTime=0,CurrentTime,WaitTime=30000;
     @Override
@@ -46,20 +51,68 @@ public class signup extends AppCompatActivity {
         m_btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //信息不能有空，验证码需要通过，两次密码不能不同，密码位数在8-20位之间(用户名不能重复)
+                etInputName= (EditText) findViewById(R.id.ed_username);
+                etInputPasswd1= (EditText) findViewById(R.id.ed_password1);
+                etInputPasswd2= (EditText) findViewById(R.id.ed_password2);
+                name=etInputName.getText().toString();
+                passwd1=etInputPasswd1.getText().toString();
+                passwd2=etInputPasswd2.getText().toString();
+
+                boolean aa = (passwd1.equals(passwd2));
+                SQLiteDatabase db1;
+                db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
+
+                String tmp[]={name};
+                Cursor c = db1.rawQuery("SELECT * FROM user where username=?", tmp);
+                if (name.length()==0||passwd1.length()==0||passwd2.length()==0||
+                        email.length()==0||getnum==-100||identification==null) {
+                    Toast.makeText(getApplicationContext(),"信息不能有空",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else if (c.getCount() > 0) {
+                    Toast.makeText(getApplicationContext(),"用户名已被使用",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else if (isVerification==0) {
+                    Toast.makeText(getApplicationContext(),"邮箱验证未通过",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else if (!aa){
+                    Toast.makeText(getApplicationContext(),"两次密码不一致",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else if (passwd1.length()<8||passwd1.length()>20){
+                    Toast.makeText(getApplicationContext(),"密码位数应在8-20位之间",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                //写入数据库
+
+                RandomNumber rn = new RandomNumber();
+                long tmpid=0; //随机id
+                boolean ab=true;
+                while(ab)
+                {
+                    tmpid=rn.getRandomNumber(7);
+                    Cursor d=db1.rawQuery("SELECT * FROM user WHERE id=?",new String[]{String.valueOf(tmpid)});
+                    if(d.getCount()<=0)ab=false;
+                }
+                db1.execSQL("INSERT INTO user(id,username,password,email) values(?,?,?,?)", new Object[]{String.valueOf(tmpid),name,passwd1,email});
+                Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_LONG).show();
+
                 Intent intent = null;
                 if (identification.equals("教师")){
                     Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
                     intent = new Intent(signup.this,teacher_info_edit.class);
+                    intent.putExtra("teacherid",""+tmpid);
                     startActivity(intent);
                 }
                 else if (identification.equals("学生")){
                     Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
                     intent = new Intent(signup.this,student_info_edit.class);
+                    intent.putExtra("studentid",""+tmpid);
                     startActivity(intent);
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"请选择身份",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -73,9 +126,6 @@ public class signup extends AppCompatActivity {
             case R.id.btGetNum:
                 //30秒内只能发送一次验证码
                 CurrentTime=System.currentTimeMillis(); //获取当前运行时间(毫秒)
-                //System.out.println("#");
-                //System.out.println(LastTime);
-                //System.out.println(CurrentTime);
                 if (CurrentTime-LastTime<WaitTime){
                     //Looper.prepare();
                     Toast.makeText(getApplicationContext(),"30秒内只能发送一次验证码",Toast.LENGTH_LONG).show();
@@ -93,7 +143,6 @@ public class signup extends AppCompatActivity {
     }
 
     //发送验证码
-
     private void sendVerificationCode(final String email) {
         try{
             new Thread() {
@@ -102,9 +151,9 @@ public class signup extends AppCompatActivity {
                     super.run();
                     try {
                         RandomNumber rn = new RandomNumber();
-                        verificationCode = rn.getRandomNumber(6);
+                        getnum = rn.getRandomNumber(6);
                         send_email se = new send_email(email);
-                        se.sendTextEmail(verificationCode); //发送文本邮件
+                        se.sendTextEmail(getnum); //发送文本邮件
                         LastTime=System.currentTimeMillis();
                         //System.out.println("@");
                         //System.out.println(LastTime);
@@ -133,18 +182,15 @@ public class signup extends AppCompatActivity {
         } catch(Exception e){
             e.printStackTrace();
         }
-        if(tmpp==verificationCode){ //验证码和输入一致
-            //System.out.println(verificationCode);
+        if(tmpp==getnum&&tmpp>0){ //验证码和输入一致
+            //System.out.println(getnum);
             //Looper.prepare();
             Toast.makeText(getApplicationContext(),"验证成功",Toast.LENGTH_LONG).show();
             //Looper.loop();
             isVerification=1;
         }
         else{
-            //System.out.println("error");
-            //Looper.prepare();
             Toast.makeText(getApplicationContext(), "验证失败", Toast.LENGTH_LONG).show();
-            //Looper.loop();
         }
     }
 }

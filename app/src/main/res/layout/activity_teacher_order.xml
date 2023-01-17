@@ -26,31 +26,27 @@
         android:layout_height="45dp"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/or_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="全部订单"
+            android:textSize="18sp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/or_in"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="本地订单"
             android:textSize="18sp"
             android:layout_weight="1"/>
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="需反馈"
-            android:textSize="18sp"
-            android:layout_weight="1"/>
-        <Button
+            android:id="@+id/or_out"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:textSize="18sp"
             android:text="网络订单"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:layout_marginLeft="1dp"
-            android:text="需反馈"/>
     </LinearLayout>
     <ListView
         android:id="@+id/order_list"

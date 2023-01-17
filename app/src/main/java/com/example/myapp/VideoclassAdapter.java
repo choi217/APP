@@ -38,10 +38,10 @@ public class VideoclassAdapter extends ArrayAdapter<Videoclass> {
         TextView name =  (TextView) view.findViewById(R.id.video_name);
         TextView info = (TextView) view.findViewById(R.id.video_info);
         TextView state = (TextView) view.findViewById(R.id.video_state);
-        image.setImageResource(vc.getImageId());
+        image.setImageResource(R.drawable.c);
         name.setText(vc.getName());
-        info.setText(vc.getInfo());
-        state.setText(vc.getState());
+        info.setText("￥"+vc.getPrice()+"|" + vc.getGrade() + vc.getSubject()+"|1节课" );
+        state.setText(vc.getDescribe());
         return view;
     }
 }

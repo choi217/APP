@@ -5,28 +5,55 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class student_space extends Fragment {
-
-
-
+    public String studentid;
+    private SQLiteDatabase sqldb;
+    private static String PACKAGE_NAME = "com.example.myapp"; //包名
+    private static String DB_PATH =  "/data" + Environment.getDataDirectory().getAbsolutePath() + "/" + PACKAGE_NAME + "/databases/";
+    private static String DB_NAME = "asdb";
+    private TextView username,balance,phone;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_student_space,container,false);
     }
+    @SuppressLint("Range")
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Button m_btn_procedure;
+        String myPath = DB_PATH + DB_NAME;
+        sqldb = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
+        String args[] ={studentid};
+        System.out.println(studentid);
+        Cursor c = sqldb.rawQuery("SELECT * FROM user where id=?", args);
+        username = getActivity().findViewById(R.id.tv_username);
+        balance =getActivity().findViewById(R.id.tv_balance);
+        phone =getActivity().findViewById(R.id.tv_phone);
+        if (c != null && c.getCount() > 0) {
+            while (c.moveToNext()) {
+                username.setText(c.getString(c.getColumnIndex("username")));
+                balance.setText(c.getString(c.getColumnIndex("money")));
+                phone.setText(c.getString(c.getColumnIndex("email")));
+            }
+            c.close();
+        }
         m_btn_procedure = getActivity().findViewById(R.id.btn_procedure);
         m_btn_procedure.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +86,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), teacher_list.class);
+                intent.putExtra("userid",studentid);
                 startActivity(intent);
             }
         });
@@ -68,6 +96,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ask_tutor.class);
+                intent.putExtra("userid",studentid);
                 startActivity(intent);
             }
         });
@@ -77,6 +106,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), student_info_show.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -86,6 +116,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), student_info_edit.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -95,6 +126,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), password_edit.class);
+                intent.putExtra("userid",studentid);
                 startActivity(intent);
             }
         });
@@ -104,6 +136,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.putExtra("logout","1");
                 startActivity(intent);
             }
         });
@@ -141,6 +174,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), myteacher_list.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -150,6 +184,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), myclass_list.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -159,6 +194,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), myappointment_list.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -168,6 +204,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), myvideo_list.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -177,6 +214,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), mycollect_list.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });
@@ -186,6 +224,7 @@ public class student_space extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), myorder_list.class);
+                intent.putExtra("studentid",studentid);
                 startActivity(intent);
             }
         });

@@ -88,8 +88,8 @@
 
     <string-array name="class_way">
         <item>教学方式</item>
-        <item>网络教学</item>
-        <item>上门家教</item>
+        <item>线上</item>
+        <item>线下</item>
     </string-array>
     <string-array name="sort">
         <item>综合排序</item>
