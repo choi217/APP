@@ -149,7 +149,7 @@ public class ask_tutor extends AppCompatActivity {
                 c.close();
                 try {
                     db1.execSQL("INSERT INTO orderlists(phone,home,teachplace,sex,grade,subject,time,describe" +
-                            ",request,teachmethod,userid,taketeacherid,salary,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                            ",request,teachmethod,userid,taketeacherid,salary,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                             new Object[]{phone,address,stech_address,sex,grade,ssubject,time,sdescribe,steacher_request,
                             online,studentid,taket,ssalary_request,count+""});
                 }catch(Exception e){

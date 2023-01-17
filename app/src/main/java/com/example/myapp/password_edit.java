@@ -43,6 +43,7 @@ public class password_edit extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(password_edit.this,password_forget.class);
+                intent.putExtra("userid",""+userid);
                 startActivity(intent);
             }
         });

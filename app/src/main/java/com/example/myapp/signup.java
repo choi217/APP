@@ -88,20 +88,30 @@ public class signup extends AppCompatActivity {
                 }
 
                 //写入数据库
+
                 RandomNumber rn = new RandomNumber();
-                long tmpid = rn.getRandomNumber(7); //随机id
-                db1.execSQL("INSERT INTO user(id,username,password,email) values(?,?,?,?)", new Object[]{tmpid,name,passwd1,email});
+                long tmpid=0; //随机id
+                boolean ab=true;
+                while(ab)
+                {
+                    tmpid=rn.getRandomNumber(7);
+                    Cursor d=db1.rawQuery("SELECT * FROM user WHERE id=?",new String[]{String.valueOf(tmpid)});
+                    if(d.getCount()<=0)ab=false;
+                }
+                db1.execSQL("INSERT INTO user(id,username,password,email) values(?,?,?,?)", new Object[]{String.valueOf(tmpid),name,passwd1,email});
                 Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_LONG).show();
 
                 Intent intent = null;
                 if (identification.equals("教师")){
                     Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
                     intent = new Intent(signup.this,teacher_info_edit.class);
+                    intent.putExtra("teacherid",""+tmpid);
                     startActivity(intent);
                 }
                 else if (identification.equals("学生")){
                     Toast.makeText(getApplicationContext(),"注册成功",Toast.LENGTH_SHORT).show();
                     intent = new Intent(signup.this,student_info_edit.class);
+                    intent.putExtra("studentid",""+tmpid);
                     startActivity(intent);
                 }
             }
@@ -180,10 +190,7 @@ public class signup extends AppCompatActivity {
             isVerification=1;
         }
         else{
-            //System.out.println("error");
-            //Looper.prepare();
             Toast.makeText(getApplicationContext(), "验证失败", Toast.LENGTH_LONG).show();
-            //Looper.loop();
         }
     }
 }
