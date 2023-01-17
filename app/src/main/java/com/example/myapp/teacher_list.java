@@ -25,11 +25,14 @@ public class teacher_list extends AppCompatActivity {
     private Button m_btn_search;
     private SQLiteDatabase sqldb;
     private Spinner province,course,education,gender,class_way,tsort;
+    private String studentid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_list);
         sqldb = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
+        Intent intent = getIntent();
+        studentid = intent.getStringExtra("userid");
         init();
         province=findViewById(R.id.province);
         course=findViewById(R.id.course);
@@ -46,6 +49,7 @@ public class teacher_list extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Teacher tea = teaList.get(position);
                 Intent intent = new Intent(teacher_list.this, teacher_info_show.class);
+                intent.putExtra("studentid",studentid);
                 intent.putExtra("teacherid",tea.getId());
                 startActivity(intent);
             }

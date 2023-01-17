@@ -114,8 +114,8 @@ public class student_info_edit extends AppCompatActivity {
                 db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
                 try {
                     db1.execSQL("UPDATE student SET name=?,province=?,sex=?,need=?,phone=? WHERE id=?", new Object[]{sname, sprovince,
-                            sgender, sneed, sphone, "1000003"});
-                    db1.execSQL("UPDATE user SET username=?,email=? WHERE id=?", new Object[]{susername, semail, "1000003"});
+                            sgender, sneed, sphone, studentid});
+                    db1.execSQL("UPDATE user SET username=?,email=? WHERE id=?", new Object[]{susername, semail, studentid});
                 }catch(Exception e){
                     e.printStackTrace();
                     e.toString();

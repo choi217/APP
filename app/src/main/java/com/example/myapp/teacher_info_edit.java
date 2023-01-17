@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -32,12 +33,14 @@ public class teacher_info_edit extends AppCompatActivity {
     private Spinner province,education;
     private TextView subject;
     private String teacherid;
+    private ImageView image;
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_info_edit);
         Intent intent= getIntent();
+        image = findViewById(R.id.edit_pic);
         teacherid =intent.getStringExtra("teacherid");
         m_btn_submit = findViewById(R.id.btn_submit);
         username=findViewById(R.id.edit_username);
@@ -103,6 +106,7 @@ public class teacher_info_edit extends AppCompatActivity {
             address.setText(saddress);
             phone.setText(sphone);
             school.setText(sschool);
+            image.setImageResource(R.drawable.a);
             SpinnerAdapter edu=education.getAdapter();
             k=edu.getCount();
             for(int i=0;i<k;i++)

@@ -12,21 +12,24 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.annotation.SuppressLint;
+import android.widget.Toast;
 
 import java.io.IOException;
 
 public class teacher_info_show extends AppCompatActivity {
-    private Button m_btn_back;
-    private String teacherid;
+    private Button m_btn_back,btn_collect;
+    private String teacherid,studentid;
     private ImageView image;
+    private SQLiteDatabase db1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_info_show);
-        SQLiteDatabase db1;
+
         db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
         Intent intent= getIntent();
         teacherid =intent.getStringExtra("teacherid");
+        studentid =intent.getStringExtra("studentid");
         m_btn_back = findViewById(R.id.show_back);
         image = findViewById(R.id.show_pic);
         TextView id=findViewById(R.id.show_num);
@@ -91,6 +94,14 @@ public class teacher_info_show extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 teacher_info_show.this.finish();
+            }
+        });
+        btn_collect = findViewById(R.id.btn_collect);
+        btn_collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                db1.execSQL("INSERT INTO studentfavorite (studentid,teacherid) VALUES (?,?)",new Object[]{studentid,teacherid});
+                Toast.makeText(getApplicationContext(), "添加成功！", Toast.LENGTH_LONG).show();
             }
         });
     }
