@@ -46,6 +46,7 @@ public class teacher_list extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Teacher tea = teaList.get(position);
                 Intent intent = new Intent(teacher_list.this, teacher_info_show.class);
+                intent.putExtra("teacherid",tea.getId());
                 startActivity(intent);
             }
         });

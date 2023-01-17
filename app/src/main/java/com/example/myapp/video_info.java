@@ -3,10 +3,12 @@ package com.example.myapp;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -19,21 +21,23 @@ import java.io.File;
 
 public class video_info extends AppCompatActivity implements View.OnClickListener{
     private VideoView videoView;
-    private Button m_btn_back;
+    private Button m_btn_back,btnPlay,btnPause,btnReplay;
+    private MediaController mMediaController;
     @Override
     //对界面的按钮和显示位置实例化，并检查权限
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_info);
 
+        videoView = new VideoView(this);
         videoView = (VideoView)findViewById(R.id.video_play);
-        Button btnPlay = (Button)findViewById(R.id.btnPlay);
-        Button btnPause = (Button)findViewById(R.id.btnPause);
-        Button btnReplay = (Button)findViewById(R.id.btnReplay);
-
-        btnPlay.setOnClickListener(this);
-        btnPause.setOnClickListener(this);
-        btnReplay.setOnClickListener(this);
+        btnPlay = (Button)findViewById(R.id.btnPlay);
+        btnPause = (Button)findViewById(R.id.btnPause);
+        btnReplay = (Button)findViewById(R.id.btnReplay);
+        mMediaController = new MediaController(this);
+        btnPlay.setOnClickListener(new mClick());
+        btnPause.setOnClickListener(new mClick());
+        btnReplay.setOnClickListener(new mClick());
         m_btn_back = findViewById(R.id.back);
         m_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +45,22 @@ public class video_info extends AppCompatActivity implements View.OnClickListene
                 video_info.this.finish();
             }
         });
+    }
+    class mClick implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            String uri ="android.resource://" + getPackageName() + "/" + R.raw.sleep;
+            videoView.setVideoURI(Uri.parse(uri));
+            mMediaController.setMediaPlayer(videoView);
+            videoView.setMediaController(mMediaController);
+            if (v == btnPlay) {
+                videoView.start();
+            } else if (v == btnPause) {
+                videoView.pause();
+            }else  if (v== btnReplay){
+                videoView.resume();
+            }
+        }
     }
 
     @Override

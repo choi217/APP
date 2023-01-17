@@ -76,7 +76,7 @@ public class teacher_space extends Fragment {
         m_btn_show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), teacher_info_show.class);
+                Intent intent = new Intent(getActivity(), teacher_show_info.class);
                 intent.putExtra("teacherid",teacherid);
                 startActivity(intent);
             }

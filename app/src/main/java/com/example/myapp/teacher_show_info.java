@@ -1,28 +1,26 @@
 package com.example.myapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.database.Cursor;
-import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.annotation.SuppressLint;
 
-import java.io.IOException;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class teacher_info_show extends AppCompatActivity {
+public class teacher_show_info extends AppCompatActivity {
     private Button m_btn_back;
     private String teacherid;
     private ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_info_show);
+        setContentView(R.layout.activity_teacher_show_info);
         SQLiteDatabase db1;
         db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
         Intent intent= getIntent();
@@ -90,7 +88,7 @@ public class teacher_info_show extends AppCompatActivity {
         m_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                teacher_info_show.this.finish();
+                teacher_show_info.this.finish();
             }
         });
     }

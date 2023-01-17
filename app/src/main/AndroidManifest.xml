@@ -38,6 +38,9 @@
             android:name=".teacher_info_show"
             android:exported="false" />
         <activity
+            android:name=".teacher_show_info"
+            android:exported="false" />
+        <activity
             android:name=".signup"
             android:exported="false" />
         <activity

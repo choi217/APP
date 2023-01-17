@@ -31,11 +31,14 @@ public class teacher_info_edit extends AppCompatActivity {
     private RadioButton male,female,a,b,ab;
     private Spinner province,education;
     private TextView subject;
+    private String teacherid;
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_info_edit);
+        Intent intent= getIntent();
+        teacherid =intent.getStringExtra("teacherid");
         m_btn_submit = findViewById(R.id.btn_submit);
         username=findViewById(R.id.edit_username);
         name=findViewById(R.id.edit_name);
@@ -60,7 +63,7 @@ public class teacher_info_edit extends AppCompatActivity {
         subject=findViewById(R.id.subject_show);
         SQLiteDatabase db1;
         db1 = openOrCreateDatabase("asdb", Context.MODE_PRIVATE, null);
-        String aa[]={"1000004"};//更改id处
+        String aa[]={teacherid};//更改id处
         Cursor c = db1.rawQuery("SELECT * FROM teacher where id=?",aa);
         if(c.getCount()>0)
         {
